@@ -9,7 +9,7 @@ class PlayingGroundView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlueprintView(
       text: "Playing\nGround",
-      textColor: Colors.grey[850],
+      textColor: Colors.grey[200],
       fontSize: 48,
       backgroundColor: Colors.blue,
     );

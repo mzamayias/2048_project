@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_2048/views/home.dart';
-import 'package:project_2048/views/playing_ground.dart';
 
 import 'views/current.dart';
 
@@ -21,15 +19,20 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-          statusBarColor: Colors.grey[200],
+          // statusBarColor: Colors.grey[200],
+          statusBarColor: Colors.transparent,
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark,
-          systemNavigationBarColor: Colors.grey[200],
+          // systemNavigationBarColor: Colors.grey[200],
+          systemNavigationBarColor: Colors.transparent,
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
-        child: Scaffold(
-          body: HomeView(),
+        child: SafeArea(
+          child: Scaffold(
+            backgroundColor: Colors.grey[200],
+            body: CurrentView(),
+          ),
         ),
       ),
     );

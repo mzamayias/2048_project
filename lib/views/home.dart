@@ -9,9 +9,9 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlueprintView(
       text: "Home",
-      textColor: Colors.white,
+      textColor: Colors.grey[200],
       fontSize: 48,
-      backgroundColor: Colors.pink[900],
+      backgroundColor: Colors.pink[700],
     );
   }
 }

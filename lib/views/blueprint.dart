@@ -17,28 +17,19 @@ class BlueprintView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double ratio = 1.1;
-    double width = MediaQuery.of(context).size.width / ratio;
-    double height = MediaQuery.of(context).size.height / ratio;
-    return Align(
-      alignment: Alignment.center,
-      child: SizedBox(
-        width: width,
-        height: height,
-        child: Card(
-          color: backgroundColor,
-          elevation: 6.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30.0)),
-          ),
-          child: Center(
-            child: Text(
-              text,
-              style: GoogleFonts.firaSans(
-                fontSize: fontSize,
-                color: textColor
-              ),
-            ),
+    return Card(
+      color: backgroundColor,
+      elevation: 0,
+      shadowColor: Colors.transparent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: GoogleFonts.firaSans(
+            fontSize: fontSize,
+            color: textColor
           ),
         ),
       ),

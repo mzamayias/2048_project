@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_page_indicator/flutter_page_indicator.dart';
 
 import 'home.dart';
 import 'playing_ground.dart';
@@ -10,11 +9,16 @@ class CurrentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Swiper(
-        itemCount: 3,
-        indicatorLayout: PageIndicatorLayout.NONE,
-      ),
+    final viewList = [HomeView(), PlayingGroundView()];
+    return Swiper(
+      autoplay: false,
+      loop: false,
+      layout: SwiperLayout.DEFAULT,
+      itemCount: viewList.length,
+      itemBuilder: (context, index) => viewList[index],
+      viewportFraction: 1,
+      scale: 1,
+      physics: BouncingScrollPhysics(),
     );
   }
 }
