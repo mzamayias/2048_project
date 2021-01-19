@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    double padding = 20.0;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -29,7 +30,10 @@ class _MyAppState extends State<MyApp> {
         child: Scaffold(
           backgroundColor: Colors.grey[200],
           body: SafeArea(
-            child: CurrentView(),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(0, padding, 0.0, padding),
+              child: CurrentView(),
+            ),
           ),
         ),
       ),
