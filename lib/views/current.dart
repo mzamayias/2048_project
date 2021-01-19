@@ -16,9 +16,10 @@ class CurrentView extends StatelessWidget {
       layout: SwiperLayout.DEFAULT,
       itemCount: viewList.length,
       itemBuilder: (context, index) => viewList[index],
-      viewportFraction: 1,
-      scale: 1,
-      physics: BouncingScrollPhysics(),
+      viewportFraction: 0.9,
+      scale: 0.3,
+      curve: Curves.slowMiddle,
+      // physics: NeverScrollableScrollPhysics(),
     );
   }
 }

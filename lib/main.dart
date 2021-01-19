@@ -19,19 +19,17 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-          // statusBarColor: Colors.grey[200],
-          statusBarColor: Colors.transparent,
+          statusBarColor: Colors.grey[200],
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark,
-          // systemNavigationBarColor: Colors.grey[200],
-          systemNavigationBarColor: Colors.transparent,
+          systemNavigationBarColor: Colors.grey[200],
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
-        child: SafeArea(
-          child: Scaffold(
-            backgroundColor: Colors.grey[200],
-            body: CurrentView(),
+        child: Scaffold(
+          backgroundColor: Colors.grey[200],
+          body: SafeArea(
+            child: CurrentView(),
           ),
         ),
       ),
