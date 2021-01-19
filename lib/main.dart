@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_2048/views/home.dart';
+import 'package:project_2048/views/playing_ground.dart';
 
-import 'views/home.dart';
+import 'views/current.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +28,9 @@ class _MyAppState extends State<MyApp> {
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.transparent,
         ),
-        child: HomeView(),
+        child: Scaffold(
+          body: HomeView(),
+        ),
       ),
     );
   }

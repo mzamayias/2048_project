@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class HomeView extends StatefulWidget {
-  HomeView({
-    Key key,
-  }) : super(key: key);
+import 'blueprint.dart';
 
-  @override
-  _HomeViewState createState() => _HomeViewState();
-}
+class HomeView extends StatelessWidget {
+  HomeView({Key key}) : super(key: key);
 
-class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: Text(
-            "text",
-            style: GoogleFonts.firaSans(
-              fontSize: 48.0
-            ),
-          ),
-        ),
-      ),
+    return BlueprintView(
+      text: "Home",
+      textColor: Colors.white,
+      fontSize: 48,
+      backgroundColor: Colors.pink[900],
     );
   }
 }
