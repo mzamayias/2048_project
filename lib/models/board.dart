@@ -17,10 +17,14 @@ class Board {
   }
 
   void randomEmptyTile() {
-    List<Tile> empty = [];
+    List<Tile> empty = []; // list of empty tiles
 
-    _boardTiles.forEach((row) {
-      empty.addAll(row.where((tile) => tile.isEmpty()));
+    _boardTiles.forEach((row) { // iterate through board's rows
+      empty.addAll( // in `empty` add all
+        row.where(
+          (tile) => tile.isEmpty(),
+        ),
+      );
     });
 
     if (empty.isEmpty) {
@@ -35,7 +39,8 @@ class Board {
     empty.removeAt(index);
   }
 
-  void initBoard(Player player) {
+  /// Initializes board tiles, _boardTiles.
+  void initBoard() {
     _boardTiles = List.generate(
       _size,
       (rowIndex) => List.generate(
@@ -49,7 +54,6 @@ class Board {
         ),
       ),
     );
-    player.score = 0;
     resetCanMerge();
     randomEmptyTile();
     randomEmptyTile();
@@ -87,7 +91,7 @@ class Board {
   bool canMoveLeft() {
     for (int row = 0; row < this._size; ++row) {
       for (int column = 1; column < this._size; ++column) {
-        if (canMerge(_boardTiles[row][column], _boardTiles[row][column-1])) {
+        if (canMerge(_boardTiles[row][column], _boardTiles[row][column - 1])) {
           return true;
         }
       }
@@ -116,7 +120,7 @@ class Board {
     }
     return false;
   }
-  
+
   bool canMoveDown() {
     for (int row = this._size - 2; row >= 0; --row) {
       for (int column = 0; column < this._size; ++column) {
@@ -127,7 +131,7 @@ class Board {
     }
     return false;
   }
-  
+
   void mergeLeft(int row, int column) {
     while (column > 0) {
       merge(_boardTiles[row][column], _boardTiles[row][column - 1]);
@@ -166,7 +170,7 @@ class Board {
         mergeLeft(row, column);
       }
     }
-    
+
     randomEmptyTile();
     resetCanMerge();
   }
