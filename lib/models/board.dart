@@ -6,14 +6,14 @@ import 'tile.dart';
 import 'player.dart';
 
 /// Class for game's board.
-class Board implements BoardActions{
+class Board implements BoardActions {
   int _size; // board's size
   List<List<Tile>> _boardTiles; // board's tiles
 
   /// Constructor
   Board(
-      this._size,
-      );
+    this._size,
+  );
 
   /// Getter for board's _size.
   int get size => _size;
@@ -244,5 +244,4 @@ class Board implements BoardActions{
   bool gameOver() {
     return !canMoveLeft() && !canMoveRight() && !canMoveUp() && !canMoveDown();
   }
-
 }
