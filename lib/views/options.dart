@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class BlueprintView extends StatelessWidget {
-  const BlueprintView({
+import 'blueprint.dart';
+
+class OptionsView extends StatelessWidget {
+  const OptionsView({
     Key key,
     this.widgetText,
   }) : super(key: key);
@@ -10,11 +12,8 @@ class BlueprintView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.transparent,
-      child: Center(
-        child: widgetText,
-      ),
+    return BlueprintView(
+      widgetText: widgetText,
     );
   }
 }
