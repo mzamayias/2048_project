@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: any
+#  google_fonts: any
   flutter_swiper: any
   flutter_page_indicator: any
 
