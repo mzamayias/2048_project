@@ -1,12 +1,31 @@
 import 'dart:math';
 
+import 'package:project_2048/models/board_actions.dart';
+
 import 'tile.dart';
 import 'player.dart';
 
 /// Class for game's board.
-class Board {
+class Board implements BoardActions{
   int _size; // board's size
   List<List<Tile>> _boardTiles; // board's tiles
+
+  /// Constructor
+  Board(
+      this._size,
+      );
+
+  /// Getter for board's _size.
+  int get size => _size;
+
+  /// Setter for board's _size.
+  set size(int size) => _size = size;
+
+  /// Getter for board's _boardTiles.
+  List<List<Tile>> get boardTiles => _boardTiles;
+
+  /// Setter for board's _boardTiles.
+  set boardTiles(List<List<Tile>> value) => _boardTiles = value;
 
   void resetCanMerge() {
     _boardTiles.forEach((row) {
@@ -16,27 +35,32 @@ class Board {
     });
   }
 
+  /// Function to create a non-empty (non-zero) tile from the grid randomly.
   void randomEmptyTile() {
-    List<Tile> empty = []; // list of empty tiles
-
-    _boardTiles.forEach((row) { // iterate through board's rows
-      empty.addAll( // in `empty` add all
+    List<Tile> emptyTiles; // Create an empty tile list.
+    _boardTiles.forEach((row) {
+      emptyTiles.addAll(
         row.where(
           (tile) => tile.isEmpty(),
         ),
       );
-    });
-
-    if (empty.isEmpty) {
+    }); // Populate empty tile list with empty board tiles.
+    if (emptyTiles.isEmpty) {
       return;
-    }
-
-    Random rng = Random();
-
-    int index = rng.nextInt(empty.length);
-    empty[index].value = rng.nextInt(9) == 0 ? 4 : 2;
-    empty[index].isNew = true;
-    empty.removeAt(index);
+    } // If empty tile list is empty, exit.
+    Random rng = Random(); // Random number generator.
+    // Pick a random index from empty list.
+    int index = rng.nextInt(emptyTiles.length);
+    // Pick a random number from 0 to 9
+    int randomValue = rng.nextInt(9);
+    // Set value empty[index] item.
+    // If randomValue is 0 or 1 (20% probability) then set tile's value to 4,
+    // else set it to 2.
+    emptyTiles[index].value = randomValue == 0 || randomValue == 1 ? 4 : 2;
+    // Set tile to new
+    emptyTiles[index].isNew = true;
+    // Remove tile from empty tiles list.
+    emptyTiles.removeAt(index);
   }
 
   /// Initializes board tiles, _boardTiles.
@@ -221,20 +245,4 @@ class Board {
     return !canMoveLeft() && !canMoveRight() && !canMoveUp() && !canMoveDown();
   }
 
-  /// Constructor
-  Board(
-    this._size,
-  );
-
-  /// Getter for board's _size.
-  int get size => _size;
-
-  /// Setter for board's _size.
-  set size(int size) => _size = size;
-
-  /// Getter for board's _boardTiles.
-  List<List<Tile>> get boardTiles => _boardTiles;
-
-  /// Setter for board's _boardTiles.
-  set boardTiles(List<List<Tile>> value) => _boardTiles = value;
 }
