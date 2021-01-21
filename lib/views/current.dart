@@ -9,7 +9,10 @@ class CurrentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final viewList = [HomeView(), PlayingGroundView()];
+    final viewList = [
+      HomeView(),
+      PlayingGroundView(),
+    ];
     return Swiper(
       autoplay: false,
       loop: false,
