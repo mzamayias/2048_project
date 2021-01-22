@@ -5,15 +5,15 @@ import 'blueprint.dart';
 class OptionsView extends StatelessWidget {
   const OptionsView({
     Key key,
-    this.widgetText,
+    this.string,
   }) : super(key: key);
 
-  final Text widgetText;
+  final String string;
 
   @override
   Widget build(BuildContext context) {
     return BlueprintView(
-      widgetText: widgetText,
+      string: string,
     );
   }
 }

@@ -12,28 +12,16 @@ class CurrentView extends StatefulWidget {
 
 class _CurrentViewState extends State<CurrentView> {
   int _selectedIndex = 0;
-  static const TextStyle _optionStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
+
   static const List<Widget> _widgets = <Widget>[
     GameView(
-      widgetText: Text(
-        'Game View',
-        style: _optionStyle,
-      ),
+      string: 'Game View',
     ),
     OptionsView(
-      widgetText: Text(
-        'Options View',
-        style: _optionStyle,
-      ),
+      string: 'Options View',
     ),
     HelpView(
-      widgetText: Text(
-        'Help View',
-        style: _optionStyle,
-      ),
+      string: 'Help View',
     ),
   ];
 
@@ -46,7 +34,6 @@ class _CurrentViewState extends State<CurrentView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -68,16 +55,15 @@ class _CurrentViewState extends State<CurrentView> {
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,
         iconSize: 32,
-        selectedItemColor: Colors.blueAccent[400],
-        unselectedItemColor: Colors.grey[500],
+        backgroundColor: Colors.blueAccent[400],
+        selectedItemColor: Colors.grey[200],
+        unselectedItemColor: Colors.black,
         showSelectedLabels: false,
         showUnselectedLabels: false,
       ),
-      body: SafeArea(
-        child: Center(
-          child: _widgets.elementAt(
-            _selectedIndex,
-          ),
+      body: Center(
+        child: _widgets.elementAt(
+          _selectedIndex,
         ),
       ),
     );
