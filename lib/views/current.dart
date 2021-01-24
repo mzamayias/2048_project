@@ -54,19 +54,18 @@ class _CurrentViewState extends State<CurrentView> {
         ],
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,
-        iconSize: 33,
-        elevation: 0,
-        selectedIconTheme: IconThemeData(
-          color: Colors.blueAccent[700],
-          opacity: 1,
-        ),
-        unselectedIconTheme: IconThemeData(
-          color: Colors.grey[50],
-          opacity: 1,
-        ),
-        backgroundColor: Colors.blueGrey[200],
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        selectedIconTheme: IconThemeData(
+          color: Colors.grey[850],
+          size: 30
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: Colors.grey[850],
+          size: 30
+        ),
       ),
       body: _views.elementAt(_selectedIndex),
     );

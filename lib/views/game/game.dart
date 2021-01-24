@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../custom_widgets/custom_button.dart';
@@ -30,7 +32,8 @@ class GameView extends StatelessWidget {
         ),
         CustomButton(
           buttonText: 'Exit',
-          // onPressed: () => exit(0),
+          // onPressed: () => Navigator.pop(context),
+          onPressed: () => exit(0),
         ),
       ],
     );

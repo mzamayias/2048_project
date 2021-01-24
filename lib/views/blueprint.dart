@@ -14,27 +14,30 @@ class BlueprintView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[200],
-        foregroundColor: Colors.blueGrey[200],
-        elevation: 0,
+        backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
+        toolbarHeight: 69,
+        elevation: 0,
         centerTitle: true,
-        title: Text(
-          viewTitle,
-          style: TextStyle(
-            color: Colors.blueAccent[700],
-            fontWeight: FontWeight.bold,
-            fontSize: 36,
+        title: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Text(
+            viewTitle,
+            style: TextStyle(
+              color: Colors.grey[850],
+              fontWeight: FontWeight.bold,
+              fontSize: 27
+            ),
           ),
         ),
       ),
       body: Container(
-        alignment: Alignment.center,
+        alignment: Alignment.topCenter,
         color: Colors.grey[50],
         child: Padding(
           padding: EdgeInsets.all(20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: children,

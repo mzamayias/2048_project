@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_2048/views/help/about.dart';
 
 import '../../custom_widgets/custom_button.dart';
 import '../blueprint.dart';
@@ -18,9 +19,9 @@ class HelpView extends StatelessWidget {
       children: <Widget>[
         CustomButton(
           buttonText: 'About',
-          onPressed: () => Card(
-            color: Colors.amber,
-            child: Text('data'),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => About()),
           ),
         ),
       ],

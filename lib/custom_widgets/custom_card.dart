@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class CustomCard extends StatelessWidget {
+  const CustomCard({
     Key key,
-    this.buttonText,
-    this.onPressed,
+    this.cardText,
   }) : super(key: key);
 
-  final String buttonText;
-  final Function onPressed;
+  final String cardText;
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: onPressed ?? () => print('"$buttonText" pressed!'),
+    return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(20.0)),
       ),
-      color: Colors.blueAccent[700],
-      splashColor: Colors.grey[850].withOpacity(0.3),
+      color: Colors.grey[850],
       child: Padding(
         padding: EdgeInsets.all(20.0),
         child: Text(
-          buttonText,
+          cardText,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.grey[50],

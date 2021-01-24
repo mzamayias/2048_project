@@ -12,8 +12,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<String> data = ['Game', 'Options', 'Help'];
-  int initPosition = 1;
+  List<String> data = [
+    'Game',
+    'Options',
+    'Help',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
