@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'game.dart';
-import 'options.dart';
-import 'help.dart';
+import 'game/game.dart';
+import 'options/options.dart';
+import 'help/help.dart';
 
 class CurrentView extends StatefulWidget {
   const CurrentView({Key key}) : super(key: key);
@@ -13,15 +13,15 @@ class CurrentView extends StatefulWidget {
 class _CurrentViewState extends State<CurrentView> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgets = <Widget>[
+  static const List<Widget> _views = <Widget>[
     GameView(
-      string: 'Game View',
+      viewTitle: 'Game',
     ),
     OptionsView(
-      string: 'Options View',
+      viewTitle: 'Options',
     ),
     HelpView(
-      string: 'Help View',
+      viewTitle: 'Help',
     ),
   ];
 
@@ -54,18 +54,21 @@ class _CurrentViewState extends State<CurrentView> {
         ],
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,
-        iconSize: 32,
-        backgroundColor: Colors.blueAccent[400],
-        selectedItemColor: Colors.grey[200],
-        unselectedItemColor: Colors.black,
+        iconSize: 33,
+        elevation: 0,
+        selectedIconTheme: IconThemeData(
+          color: Colors.blueAccent[700],
+          opacity: 1,
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: Colors.grey[50],
+          opacity: 1,
+        ),
+        backgroundColor: Colors.blueGrey[200],
         showSelectedLabels: false,
         showUnselectedLabels: false,
       ),
-      body: Center(
-        child: _widgets.elementAt(
-          _selectedIndex,
-        ),
-      ),
+      body: _views.elementAt(_selectedIndex),
     );
   }
 }

@@ -3,32 +3,43 @@ import 'package:flutter/material.dart';
 class BlueprintView extends StatelessWidget {
   const BlueprintView({
     Key key,
-    this.string,
-    this.child,
+    this.viewTitle,
+    this.children,
   }) : super(key: key);
 
-  final String string;
-  final Widget child;
+  final String viewTitle;
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent[400],
-        foregroundColor: Colors.blueAccent[400],
+        backgroundColor: Colors.blueGrey[200],
+        foregroundColor: Colors.blueGrey[200],
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        centerTitle: true,
         title: Text(
-          string,
+          viewTitle,
           style: TextStyle(
-            color: Colors.grey[200],
-            fontSize: 30,
+            color: Colors.blueAccent[700],
             fontWeight: FontWeight.bold,
+            fontSize: 36,
           ),
         ),
-        elevation: 0,
       ),
       body: Container(
-        color: Colors.grey[200],
-        child: child,
+        alignment: Alignment.center,
+        color: Colors.grey[50],
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: children,
+          ),
+        ),
       ),
     );
   }
