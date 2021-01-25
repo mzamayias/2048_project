@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:project_2048/models/board_actions.dart';
+import 'board_actions.dart';
 
 import 'tile.dart';
 import 'player.dart';

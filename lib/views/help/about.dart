@@ -4,8 +4,8 @@ import '../../custom_widgets/custom_button.dart';
 import '../../custom_widgets/custom_card.dart';
 import '../../custom_widgets/string_data.dart';
 import '../../views/blueprint.dart';
-import '../../models/hard_coded/help/app.dart';
-import '../../models/hard_coded/help/developer.dart';
+import '../../models/help/app.dart';
+import '../../models/help/developer.dart';
 
 class About extends StatelessWidget {
   const About({Key key}) : super(key: key);
