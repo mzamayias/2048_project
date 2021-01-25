@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:project_2048/custom_widgets/string_data.dart';
-
-import '../../data/help/app.dart';
-import '../../data/help/developer.dart';
-import '../../views/help/details.dart';
 
 import '../../custom_widgets/custom_button.dart';
 import '../../custom_widgets/custom_card.dart';
+import '../../custom_widgets/string_data.dart';
 import '../../views/blueprint.dart';
+import '../../models/hard_coded/help/app.dart';
+import '../../models/hard_coded/help/developer.dart';
 
 class About extends StatelessWidget {
   const About({Key key}) : super(key: key);
@@ -21,7 +19,7 @@ class About extends StatelessWidget {
 
     App _appDetails = App(
       name: '2048 Semester Project',
-      version: 'Development',
+      version: 'Development Channel',
     );
 
     return BlueprintView(
