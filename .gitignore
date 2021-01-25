@@ -47,3 +47,4 @@ app.*.map.json
 
 # Custom files
 /lib/models/to_be_removed.dart
+lib/models/game/to_be_removed.dart
