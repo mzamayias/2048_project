@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/components/base_view.dart';
+import 'package:project_2048/views/components/view_blueprint.dart';
 
 
 class GameView extends StatelessWidget {
@@ -33,8 +33,7 @@ class GameView extends StatelessWidget {
         ),
         BaseButton(
           buttonText: 'Exit',
-          // onPressed: () => Navigator.pop(context),
-          onPressed: () => exit(0),
+          // onPressed: () => exit(0),
         ),
       ],
     );
