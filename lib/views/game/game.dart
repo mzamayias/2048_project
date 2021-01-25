@@ -2,8 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../../custom_widgets/custom_button.dart';
-import '../blueprint.dart';
+import 'package:project_2048/views/components/base_button.dart';
+import 'package:project_2048/views/components/base_view.dart';
+
 
 class GameView extends StatelessWidget {
   const GameView({
@@ -15,22 +16,22 @@ class GameView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlueprintView(
+    return BaseView(
       viewTitle: viewTitle,
       children: <Widget>[
-        CustomButton(
+        BaseButton(
           buttonText: 'New game',
         ),
         SizedBox(
           height: 20.0,
         ),
-        CustomButton(
+        BaseButton(
           buttonText: 'Restart game',
         ),
         SizedBox(
           height: 20.0,
         ),
-        CustomButton(
+        BaseButton(
           buttonText: 'Exit',
           // onPressed: () => Navigator.pop(context),
           onPressed: () => exit(0),

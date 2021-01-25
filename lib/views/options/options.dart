@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../custom_widgets/custom_button.dart';
-import '../blueprint.dart';
+import 'package:project_2048/views/components/base_button.dart';
+import 'package:project_2048/views/components/base_view.dart';
 
 class OptionsView extends StatelessWidget {
   const OptionsView({
@@ -13,10 +13,10 @@ class OptionsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlueprintView(
+    return BaseView(
       viewTitle: viewTitle,
       children: <Widget>[
-        CustomButton(
+        BaseButton(
           buttonText: 'History',
         )
       ],

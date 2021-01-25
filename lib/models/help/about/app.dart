@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class App {
+class App extends ChangeNotifier {
   String name;
   String version;
 
   App({
-    Key key,
     @required this.name,
     @required this.version,
   });

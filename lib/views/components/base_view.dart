@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BlueprintView extends StatelessWidget {
-  const BlueprintView({
+class BaseView extends StatelessWidget {
+  const BaseView({
     Key key,
     this.viewTitle,
     this.children,

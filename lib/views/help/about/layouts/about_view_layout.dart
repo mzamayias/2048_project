@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 
-import '../../custom_widgets/custom_button.dart';
-import '../../custom_widgets/custom_card.dart';
-import '../../custom_widgets/string_data.dart';
-import '../../views/blueprint.dart';
-import '../../models/help/app.dart';
-import '../../models/help/developer.dart';
+import 'package:project_2048/models/help/about/app.dart';
+import 'package:project_2048/models/help/about/developer.dart';
 
-class About extends StatelessWidget {
-  const About({Key key}) : super(key: key);
+import 'package:project_2048/views/components/base_view.dart';
+import 'package:project_2048/views/components/base_card.dart';
+import 'package:project_2048/views/components/base_button.dart';
+import 'package:project_2048/views/components/string_data.dart';
+
+class AboutViewLayout extends StatelessWidget {
+  const AboutViewLayout({
+    Key key,
+    @required this.developer,
+    @required this.app,
+  }) : super(key: key);
+
+  final Developer developer;
+  final App app;
 
   @override
   Widget build(BuildContext context) {
-    Developer _developerDetails = Developer(
-      firstName: 'Mike',
-      lastName: 'Zamayias',
-    );
-
-    App _appDetails = App(
-      name: '2048 Semester Project',
-      version: 'Development Channel',
-    );
-
-    return BlueprintView(
+    return BaseView(
       viewTitle: 'About',
       children: <Widget>[
-        CustomCard(
+        BaseCard(
           cardText: 'Developer details',
         ),
         SizedBox(
@@ -35,12 +33,12 @@ class About extends StatelessWidget {
           flex: 1,
           dataType: 'Name',
           dataValue:
-              '${_developerDetails.firstName} ${_developerDetails.lastName}',
+              '${developer.firstName} ${developer.lastName}',
         ),
         SizedBox(
           height: 10,
         ),
-        CustomCard(
+        BaseCard(
           cardText: 'App details',
         ),
         SizedBox(
@@ -49,7 +47,7 @@ class About extends StatelessWidget {
         StringData(
           flex: 1,
           dataType: 'Name',
-          dataValue: '${_appDetails.name}',
+          dataValue: '${app.name}',
         ),
         SizedBox(
           height: 10,
@@ -57,12 +55,12 @@ class About extends StatelessWidget {
         StringData(
           flex: 1,
           dataType: 'Version',
-          dataValue: '${_appDetails.version}',
+          dataValue: '${app.version}',
         ),
         SizedBox(
           height: 210,
         ),
-        CustomButton(
+        BaseButton(
           buttonText: 'Go back',
           onPressed: () => Navigator.pop(context),
         ),

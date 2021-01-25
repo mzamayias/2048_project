@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_2048/views/help/about.dart';
 
-import '../../custom_widgets/custom_button.dart';
-import '../blueprint.dart';
+import 'package:project_2048/views/help/about/about_view.dart';
+import 'package:project_2048/views/components/base_view.dart';
+import 'package:project_2048/views/components/base_button.dart';
 
 class HelpView extends StatelessWidget {
   const HelpView({
@@ -14,14 +14,14 @@ class HelpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlueprintView(
+    return BaseView(
       viewTitle: viewTitle,
       children: <Widget>[
-        CustomButton(
+        BaseButton(
           buttonText: 'About',
           onPressed: () => Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => About()),
+            MaterialPageRoute(builder: (context) => AboutView()),
           ),
         ),
       ],
