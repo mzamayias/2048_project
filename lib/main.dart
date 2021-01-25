@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'views/current.dart';
+import 'package:project_2048/views/current_view.dart';
 
 void main() => runApp(MyApp());
 

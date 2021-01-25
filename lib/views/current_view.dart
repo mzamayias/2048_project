@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'game/game.dart';
-import 'options/options.dart';
-import 'help/help_view.dart';
+import 'package:project_2048/views/game/game_view.dart';
+import 'package:project_2048/views/options/options_view.dart';
+import 'package:project_2048/views/help/help_view.dart';
 
 class CurrentView extends StatefulWidget {
   const CurrentView({Key key}) : super(key: key);
