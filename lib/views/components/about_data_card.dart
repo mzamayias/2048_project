@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class StringData extends StatelessWidget {
-  const StringData({
+class AboutDataCard extends StatelessWidget {
+  const AboutDataCard({
     Key key,
     @required this.flex,
     @required this.dataType,
@@ -17,7 +17,7 @@ class StringData extends StatelessWidget {
     return Expanded(
       flex: flex,
       child: Card(
-        color: Colors.indigoAccent,
+        color: Colors.teal[600],
         shadowColor: Colors.transparent,
         elevation: 0.0,
         shape: RoundedRectangleBorder(

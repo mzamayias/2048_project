@@ -3,8 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/components/view_blueprint.dart';
-
+import 'package:project_2048/views/components/base_view.dart';
 
 class GameView extends StatelessWidget {
   const GameView({
@@ -22,14 +21,8 @@ class GameView extends StatelessWidget {
         BaseButton(
           buttonText: 'New game',
         ),
-        SizedBox(
-          height: 20.0,
-        ),
         BaseButton(
           buttonText: 'Restart game',
-        ),
-        SizedBox(
-          height: 20.0,
         ),
         BaseButton(
           buttonText: 'Exit',

@@ -12,12 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<String> data = [
-    'Game',
-    'Options',
-    'Help',
-  ];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,8 +21,8 @@ class _MyAppState extends State<MyApp> {
           statusBarColor: Colors.transparent,
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.light,
-          systemNavigationBarColor: Colors.transparent,
-          systemNavigationBarIconBrightness: Brightness.light,
+          systemNavigationBarColor: Colors.grey[200],
+          systemNavigationBarIconBrightness: Brightness.dark,
         ),
         child: CurrentView(),
       ),

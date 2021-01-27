@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // import model
-import '../../../models/help/about/about_model.dart';
-// import controller
-import '../../../controllers/help/about/about_controller.dart';
+import 'package:project_2048/models/help/about/about_model.dart';
 
-// import about layout
-import 'layouts/about_view_layout.dart';
+// import controller
+import 'package:project_2048/controllers/help/about/about_controller.dart';
+
+// import about view layout
+import 'package:project_2048/views/help/about/layouts/about_view_layout.dart';
 
 class AboutView extends StatelessWidget {
   @override

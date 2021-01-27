@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+// import models for developer and app data
 import 'package:project_2048/models/help/about/app.dart';
 import 'package:project_2048/models/help/about/developer.dart';
 
-import 'package:project_2048/views/components/view_blueprint.dart';
+// import view components
+import 'package:project_2048/views/components/base_view.dart';
 import 'package:project_2048/views/components/base_card.dart';
 import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/components/data_card.dart';
+import 'package:project_2048/views/components/about_data_card.dart';
 
 class AboutViewLayout extends StatelessWidget {
   const AboutViewLayout({
@@ -26,46 +28,57 @@ class AboutViewLayout extends StatelessWidget {
         BaseCard(
           cardText: 'Developer details',
         ),
-        SizedBox(
-          height: 10,
-        ),
-        StringData(
+        Expanded(
           flex: 1,
-          dataType: 'Name',
-          dataValue:
-              '${developer.firstName} ${developer.lastName}',
+          child: SizedBox(
+            height: 1,
+          ),
         ),
-        SizedBox(
-          height: 10,
+        AboutDataCard(
+          flex: 8,
+          dataType: 'Name',
+          dataValue: '${developer.firstName} ${developer.lastName}',
+        ),
+        Expanded(
+          flex: 1,
+          child: SizedBox(
+            height: 1,
+          ),
         ),
         BaseCard(
           cardText: 'App details',
         ),
-        SizedBox(
-          height: 10,
-        ),
-        StringData(
+        Expanded(
           flex: 1,
+          child: SizedBox(
+            height: 1,
+          ),
+        ),
+        AboutDataCard(
+          flex: 8,
           dataType: 'Name',
           dataValue: '${app.name}',
         ),
-        SizedBox(
-          height: 10,
-        ),
-        StringData(
+        Expanded(
           flex: 1,
+          child: SizedBox(
+            height: 1,
+          ),
+        ),
+        AboutDataCard(
+          flex: 8,
           dataType: 'Version',
           dataValue: '${app.version}',
         ),
-        SizedBox(
-          height: 210,
+        Expanded(
+          flex: 1,
+          child: SizedBox(
+            height: 1,
+          ),
         ),
         BaseButton(
           buttonText: 'Go back',
           onPressed: () => Navigator.pop(context),
-        ),
-        SizedBox(
-          height: 20,
         ),
       ],
     );
