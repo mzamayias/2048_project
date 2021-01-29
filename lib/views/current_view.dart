@@ -1,7 +1,8 @@
+import 'package:bubbled_navigation_bar/bubbled_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:colorful_safe_area/colorful_safe_area.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/rendering.dart';
+import 'package:project_2048/views/components/bubbled_navigation_bar_item.dart';
 
 // import project views
 import 'package:project_2048/views/game/game_view.dart';
@@ -15,93 +16,92 @@ class CurrentView extends StatefulWidget {
 }
 
 class _CurrentViewState extends State<CurrentView> {
-  int _selectedIndex = 0;
-
-  static List<Widget> _views = <Widget>[
-    GameView(
-      viewTitle: 'Game',
-    ),
-    OptionsView(
-      viewTitle: 'Options',
-    ),
-    HelpView(
-      viewTitle: 'Help',
-    ),
+  static List<Widget> _views = [
+    GameView(),
+    OptionsView(),
+    HelpView(),
   ];
 
-  void _onItemTapped(int index) => setState(() => _selectedIndex = index);
+  PageController _pageController;
+  MenuPositionController _menuPositionController;
+  bool _userPageDragging = false;
+
+  @override
+  void initState() {
+    _menuPositionController = MenuPositionController(
+      initPosition: 0,
+    );
+
+    _pageController = PageController(
+      initialPage: 0,
+      keepPage: false,
+      viewportFraction: 1.0,
+    );
+
+    _pageController.addListener(
+      handlePageChange,
+    );
+
+    super.initState();
+  }
+
+  void handlePageChange() {
+    _menuPositionController.absolutePosition = _pageController.page;
+  }
+
+  // ignore: missing_return
+  bool checkUserDragging(ScrollNotification scrollNotification) {
+    if (scrollNotification is UserScrollNotification &&
+        scrollNotification.direction != ScrollDirection.idle) {
+      _userPageDragging = true;
+    } else if (scrollNotification is ScrollEndNotification) {
+      _userPageDragging = false;
+    }
+    if (_userPageDragging) {
+      _menuPositionController.findNearestTarget(_pageController.page);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ColorfulSafeArea(
-      color: Colors.grey[50],
-      child: Scaffold(
-        bottomNavigationBar: CurvedNavigationBar(
-          // color: Colors.grey[50],
-          color: Colors.teal[600],
-          backgroundColor: Colors.white,
-          buttonBackgroundColor: Colors.blueAccent[700],
-          animationCurve: Curves.easeInOutCubic,
-          animationDuration: Duration(milliseconds: 600),
-          height: 72,
-          index: _selectedIndex,
-          onTap: _onItemTapped,
-          items: <Widget>[
-            Icon(
-              Icons.gamepad_rounded,
-              color: Colors.grey[50],
-              size: 39,
-            ),
-            Icon(
-              Icons.settings_rounded,
-              color: Colors.grey[50],
-              size: 39,
-            ),
-            Icon(
-              Icons.help_rounded,
-              color: Colors.grey[50],
-              size: 39,
-            ),
-          ],
+    return Scaffold(
+      backgroundColor: Colors.grey[50],
+      body: NotificationListener<ScrollNotification>(
+        onNotification: (scrollNotification) =>
+            checkUserDragging(scrollNotification),
+        child: PageView(
+          physics: BouncingScrollPhysics(),
+          controller: _pageController,
+          children: _views,
         ),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   type: BottomNavigationBarType.fixed,
-        //   elevation: 0,
-        //   backgroundColor: Colors.blueAccent[700],
-        //   onTap: _onItemTapped,
-        //   currentIndex: _selectedIndex,
-        //   showSelectedLabels: true,
-        //   selectedLabelStyle: TextStyle(
-        //     color: Colors.white
-        //   ),
-        //   showUnselectedLabels: false,
-        //   selectedIconTheme: IconThemeData(
-        //     color: Colors.grey[200],
-        //     size: 30,
-        //   ),
-        //   unselectedIconTheme: IconThemeData(
-        //     color: Colors.grey[200],
-        //     size: 30,
-        //   ),
-        //   items: <BottomNavigationBarItem>[
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.gamepad_outlined),
-        //       activeIcon: Icon(Icons.gamepad_rounded),
-        //       label: 'Game',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.settings_outlined),
-        //       activeIcon: Icon(Icons.settings_rounded),
-        //       label: 'Options',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.help_outline_rounded),
-        //       activeIcon: Icon(Icons.help_rounded),
-        //       label: 'Help',
-        //     )
-        //   ],
-        // ),
-        body: _views.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BubbledNavigationBar(
+        controller: _menuPositionController,
+        onTap: (index) => _pageController.animateToPage(
+          index,
+          curve: Curves.easeInOutQuad,
+          duration: Duration(milliseconds: 500),
+        ),
+        itemMargin: EdgeInsets.symmetric(horizontal: 18.0),
+        defaultBubbleColor: Colors.blueAccent[700],
+        backgroundColor: Colors.grey[50],
+        items: <BubbledNavigationBarItem>[
+          bubbledNavigationBarItem(
+            Icons.gamepad_outlined,
+            Icons.gamepad_rounded,
+            'Game',
+          ),
+          bubbledNavigationBarItem(
+            Icons.settings_outlined,
+            Icons.settings_rounded,
+            'Options',
+          ),
+          bubbledNavigationBarItem(
+            Icons.help_outline_outlined,
+            Icons.help_rounded,
+            'Help',
+          ),
+        ],
       ),
     );
   }

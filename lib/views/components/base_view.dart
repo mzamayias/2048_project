@@ -1,3 +1,4 @@
+import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:flutter/material.dart';
 
 class BaseView extends StatelessWidget {
@@ -13,34 +14,13 @@ class BaseView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        toolbarHeight: 69,
-        elevation: 0,
-        centerTitle: true,
-        title: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Text(
-            viewTitle,
-            style: TextStyle(
-                color: Colors.grey[850],
-                fontWeight: FontWeight.bold,
-                fontSize: 27),
-          ),
-        ),
-      ),
-      body: SafeArea(
+      body: ColorfulSafeArea(
+        color: Colors.grey[50],
         child: Container(
           alignment: Alignment.topCenter,
-          color: Colors.white,
+          color: Colors.grey[50],
           child: Padding(
             padding: EdgeInsets.all(20.0),
-            // child: ListView.builder(
-            //   itemCount: children.length,
-            //   itemBuilder: (BuildContext context, int index) => children[index],
-            //   shrinkWrap: true,
-            // ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               mainAxisSize: MainAxisSize.max,

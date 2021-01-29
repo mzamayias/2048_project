@@ -7,6 +7,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bubbled_navigation_bar: ^0.0.4
   colorful_safe_area: ^0.2.1
   concentric_transition: ^0.1.1
   cupertino_icons: ^1.0.2

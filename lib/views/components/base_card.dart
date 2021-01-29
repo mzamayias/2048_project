@@ -23,7 +23,7 @@ class BaseCard extends StatelessWidget {
           style: TextStyle(
             color: Colors.grey[50],
             fontSize: 21,
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

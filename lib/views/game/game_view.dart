@@ -8,15 +8,12 @@ import 'package:project_2048/views/components/base_view.dart';
 class GameView extends StatelessWidget {
   const GameView({
     Key key,
-    this.viewTitle,
   }) : super(key: key);
-
-  final String viewTitle;
 
   @override
   Widget build(BuildContext context) {
     return BaseView(
-      viewTitle: viewTitle,
+      viewTitle: 'Game',
       children: <Widget>[
         BaseButton(
           buttonText: 'New game',

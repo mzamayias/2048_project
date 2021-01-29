@@ -13,7 +13,7 @@ class BaseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      // width: MediaQuery.of(context).size.width,
       child: FlatButton(
         onPressed: onPressed ?? () => print('"$buttonText" pressed!'),
         shape: RoundedRectangleBorder(
@@ -29,7 +29,7 @@ class BaseButton extends StatelessWidget {
             style: TextStyle(
               color: Colors.grey[50],
               fontSize: 21,
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

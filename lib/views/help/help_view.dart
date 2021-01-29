@@ -9,15 +9,12 @@ import 'package:project_2048/views/components/base_button.dart';
 class HelpView extends StatelessWidget {
   const HelpView({
     Key key,
-    this.viewTitle,
   }) : super(key: key);
-
-  final String viewTitle;
 
   @override
   Widget build(BuildContext context) {
     return BaseView(
-      viewTitle: viewTitle,
+      viewTitle: 'Help',
       children: <Widget>[
         BaseButton(
           buttonText: 'About',

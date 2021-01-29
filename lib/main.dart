@@ -1,3 +1,4 @@
+import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,7 +25,10 @@ class _MyAppState extends State<MyApp> {
           systemNavigationBarColor: Colors.grey[200],
           systemNavigationBarIconBrightness: Brightness.dark,
         ),
-        child: CurrentView(),
+        child: ColorfulSafeArea(
+          color: Colors.grey[50],
+          child: CurrentView(),
+        ),
       ),
     );
   }
