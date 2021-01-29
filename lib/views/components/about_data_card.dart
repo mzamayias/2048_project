@@ -1,3 +1,4 @@
+// import packages
 import 'package:flutter/material.dart';
 
 class AboutDataCard extends StatelessWidget {
@@ -17,7 +18,7 @@ class AboutDataCard extends StatelessWidget {
     return Expanded(
       flex: flex,
       child: Card(
-        color: Colors.teal[600],
+        color: Colors.cyan[700],
         shadowColor: Colors.transparent,
         elevation: 0.0,
         shape: RoundedRectangleBorder(
@@ -40,7 +41,7 @@ class AboutDataCard extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.grey[50],
                       fontSize: 18,
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

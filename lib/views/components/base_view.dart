@@ -1,5 +1,6 @@
-import 'package:colorful_safe_area/colorful_safe_area.dart';
+// import packages
 import 'package:flutter/material.dart';
+import 'package:colorful_safe_area/colorful_safe_area.dart';
 
 class BaseView extends StatelessWidget {
   const BaseView({
@@ -22,7 +23,7 @@ class BaseView extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(20.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.end,
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: children,

@@ -1,6 +1,7 @@
+// import packages
 import 'package:flutter/material.dart';
 
-// import models for developer and app data
+// import models
 import 'package:project_2048/models/help/about/app.dart';
 import 'package:project_2048/models/help/about/developer.dart';
 
