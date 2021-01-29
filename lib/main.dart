@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
           statusBarIconBrightness: Brightness.light,
           systemNavigationBarColor: Colors.grey[200],
           systemNavigationBarIconBrightness: Brightness.dark,
+          systemNavigationBarDividerColor: Colors.transparent
         ),
         child: ColorfulSafeArea(
           color: Colors.grey[50],
