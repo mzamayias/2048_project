@@ -1,8 +1,9 @@
-import 'package:colorful_safe_area/colorful_safe_area.dart';
+// import packages
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:colorful_safe_area/colorful_safe_area.dart';
 
-import 'package:project_2048/views/current_view.dart';
+import 'package:project_2048/views/current_view.dart'; // view
 
 void main() => runApp(MyApp());
 
@@ -19,12 +20,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
           statusBarBrightness: Brightness.light,
-          statusBarIconBrightness: Brightness.light,
-          systemNavigationBarColor: Colors.grey[200],
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
           systemNavigationBarIconBrightness: Brightness.dark,
-          systemNavigationBarDividerColor: Colors.transparent
         ),
         child: ColorfulSafeArea(
           color: Colors.grey[50],

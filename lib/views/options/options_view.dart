@@ -14,8 +14,8 @@ class OptionsView extends StatelessWidget {
       viewTitle: 'Options',
       children: <Widget>[
         BaseButton(
-          buttonText: 'History',
-        )
+          buttonText: 'Show Move History',
+        ),
       ],
     );
   }

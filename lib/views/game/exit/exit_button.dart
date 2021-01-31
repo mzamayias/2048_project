@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 
-class BaseButton extends StatelessWidget {
-  const BaseButton({
+class ExitButton extends StatelessWidget {
+  const ExitButton({
     Key key,
-    this.buttonText,
-    this.onPressed,
+    @required this.onPressed,
+    @required this.buttonText,
   }) : super(key: key);
 
-  final String buttonText;
   final Function onPressed;
+  final String buttonText;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      // width: MediaQuery.of(context).size.width,
-      child: FlatButton(
+  Widget build(BuildContext context) => FlatButton(
         onPressed: onPressed ?? () => print('"$buttonText" pressed!'),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(21.0)),
@@ -22,7 +19,7 @@ class BaseButton extends StatelessWidget {
         color: Colors.blueAccent[700],
         splashColor: Colors.grey[850].withOpacity(0.3),
         child: Padding(
-          padding: EdgeInsets.all(21.0),
+          padding: EdgeInsets.all(6.0),
           child: Text(
             buttonText,
             textAlign: TextAlign.center,
@@ -33,7 +30,5 @@ class BaseButton extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }
