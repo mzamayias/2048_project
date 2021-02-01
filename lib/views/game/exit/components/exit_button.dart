@@ -19,7 +19,7 @@ class ExitButton extends StatelessWidget {
         color: Colors.blueAccent[700],
         splashColor: Colors.grey[850].withOpacity(0.3),
         child: Padding(
-          padding: EdgeInsets.all(6.0),
+          padding: EdgeInsets.all(0.0),
           child: Text(
             buttonText,
             textAlign: TextAlign.center,

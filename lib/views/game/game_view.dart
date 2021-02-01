@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 // import view components
 import 'package:project_2048/views/components/base_button.dart'; // blue buttons
 import 'package:project_2048/views/components/base_view.dart';
-import 'package:project_2048/views/game/exit/exit_button.dart'; // view blueprint
+import 'package:project_2048/views/game/exit/components/exit_button.dart'; // view blueprint
 
 class GameView extends StatelessWidget {
   const GameView({

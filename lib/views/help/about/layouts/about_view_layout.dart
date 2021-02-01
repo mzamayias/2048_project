@@ -9,7 +9,7 @@ import 'package:project_2048/models/help/about/developer.dart';
 import 'package:project_2048/views/components/base_view.dart';
 import 'package:project_2048/views/components/base_card.dart';
 import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/components/about_data_card.dart';
+import 'package:project_2048/views/help/about/components/about_data_card.dart';
 
 class AboutViewLayout extends StatelessWidget {
   const AboutViewLayout({
