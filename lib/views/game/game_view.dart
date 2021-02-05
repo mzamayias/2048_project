@@ -1,7 +1,6 @@
 // import packages
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:project_2048/controllers/game/exit/exit_app.dart';
 
 // import view components
 import 'package:project_2048/views/components/base_button.dart'; // blue buttons
