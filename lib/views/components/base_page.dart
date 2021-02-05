@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 
-class BaseView extends StatelessWidget {
-  const BaseView({
+class BasePage extends StatelessWidget {
+  const BasePage({
     Key key,
     this.viewTitle,
     this.children,

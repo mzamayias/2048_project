@@ -5,18 +5,18 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 // import view components
-import 'package:project_2048/views/components/base_view.dart';
+import 'package:project_2048/views/components/base_page.dart';
 import 'package:project_2048/views/components/base_button.dart';
 import 'package:project_2048/views/components/base_card.dart';
 
-class ExitViewLayout extends StatelessWidget {
-  const ExitViewLayout({
+class ExitPageLayout extends StatelessWidget {
+  const ExitPageLayout({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
+    return BasePage(
       viewTitle: 'Exit',
       children: <Widget>[
         BaseCard(

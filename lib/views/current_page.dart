@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 // import pages
-import 'package:project_2048/views/game/game_view.dart';
-import 'package:project_2048/views/help/help_view.dart';
-import 'package:project_2048/views/options/options_view.dart';
+import 'package:project_2048/views/game/game_page.dart';
+import 'package:project_2048/views/help/help_page.dart';
+import 'package:project_2048/views/options/options_page.dart';
 
-class CurrentView extends StatefulWidget {
-  const CurrentView({Key key}) : super(key: key);
+class CurrentPage extends StatefulWidget {
+  const CurrentPage({Key key}) : super(key: key);
   @override
-  _CurrentViewState createState() => _CurrentViewState();
+  _CurrentPageState createState() => _CurrentPageState();
 }
 
-class _CurrentViewState extends State<CurrentView> {
-  static List<Widget> _views = [
-    GameView(),
-    OptionsView(),
-    HelpView(),
+class _CurrentPageState extends State<CurrentPage> {
+  static List<Widget> _pages = [
+    GamePage(),
+    OptionsPage(),
+    HelpPage(),
   ];
 
   // https://stackoverflow.com/a/63258130/13504709
@@ -41,7 +41,7 @@ class _CurrentViewState extends State<CurrentView> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: PageView(
-        children: _views,
+        children: _pages,
         onPageChanged: onPageChanged,
         controller: _pageController,
       ),

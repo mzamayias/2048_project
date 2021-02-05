@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/components/base_view.dart';
+import 'package:project_2048/views/components/base_page.dart';
 
-class OptionsView extends StatelessWidget {
-  const OptionsView({
+class OptionsPage extends StatelessWidget {
+  const OptionsPage({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
+    return BasePage(
       viewTitle: 'Options',
       children: <Widget>[
         BaseButton(
