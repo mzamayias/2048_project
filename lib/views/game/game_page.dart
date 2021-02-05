@@ -39,8 +39,8 @@ class GamePage extends StatelessWidget {
             PageTransition(
               type: PageTransitionType.leftToRightWithFade,
               curve: Curves.easeInToLinear,
-              duration: Duration(milliseconds: 600),
-              reverseDuration: Duration(milliseconds: 600),
+              duration: Duration(milliseconds: 300),
+              reverseDuration: Duration(milliseconds: 300),
               child: ExitPageLayout(),
             ),
           ),

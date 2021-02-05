@@ -53,11 +53,11 @@ class _CurrentPageState extends State<CurrentPage> {
         showUnselectedLabels: false,
         selectedIconTheme: IconThemeData(
           color: Colors.blueAccent[700],
-          size: 36,
+          size: 33,
         ),
         unselectedIconTheme: IconThemeData(
           color: Colors.blueAccent[700],
-          size: 36,
+          size: 33,
         ),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -89,7 +89,7 @@ class _CurrentPageState extends State<CurrentPage> {
   void onIconTapped(int pageIndex) {
     this._pageController.animateToPage(
           pageIndex,
-          duration: const Duration(milliseconds: 600),
+          duration: Duration(milliseconds: 300),
           curve: Curves.easeInToLinear,
         );
   }

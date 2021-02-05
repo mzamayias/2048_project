@@ -22,8 +22,8 @@ class HelpPage extends StatelessWidget {
             PageTransition(
               type: PageTransitionType.rightToLeftWithFade,
               curve: Curves.easeInToLinear,
-              duration: Duration(milliseconds: 600),
-              reverseDuration: Duration(milliseconds: 600),
+              duration: Duration(milliseconds: 300),
+              reverseDuration: Duration(milliseconds: 300),
               child: AboutPage(),
             ),
           ),
