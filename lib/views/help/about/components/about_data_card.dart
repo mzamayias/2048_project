@@ -39,7 +39,7 @@ class AboutDataCard extends StatelessWidget {
                     dataType,
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                      color: Colors.grey[50],
+                      color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
