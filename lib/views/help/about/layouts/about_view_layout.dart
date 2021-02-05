@@ -29,53 +29,38 @@ class AboutViewLayout extends StatelessWidget {
         BaseCard(
           cardText: 'Developer details',
         ),
-        Expanded(
+        Spacer(
           flex: 1,
-          child: SizedBox(
-            height: 1,
-          ),
         ),
         AboutDataCard(
           flex: 8,
           dataType: 'Name',
           dataValue: '${developer.firstName} ${developer.lastName}',
         ),
-        Expanded(
+        Spacer(
           flex: 1,
-          child: SizedBox(
-            height: 1,
-          ),
         ),
         BaseCard(
           cardText: 'App details',
         ),
-        Expanded(
+        Spacer(
           flex: 1,
-          child: SizedBox(
-            height: 1,
-          ),
         ),
         AboutDataCard(
           flex: 8,
           dataType: 'Name',
           dataValue: '${app.name}',
         ),
-        Expanded(
+        Spacer(
           flex: 1,
-          child: SizedBox(
-            height: 1,
-          ),
         ),
         AboutDataCard(
           flex: 8,
           dataType: 'Version',
           dataValue: '${app.version}',
         ),
-        Expanded(
+        Spacer(
           flex: 1,
-          child: SizedBox(
-            height: 1,
-          ),
         ),
         BaseButton(
           buttonText: 'Go back',
