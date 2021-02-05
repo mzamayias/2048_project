@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:concentric_transition/concentric_transition.dart';
 import 'package:page_transition/page_transition.dart';
 
 import 'package:project_2048/views/help/about/about_view.dart';
@@ -22,7 +21,7 @@ class HelpView extends StatelessWidget {
             context,
             PageTransition(
               type: PageTransitionType.rightToLeftWithFade,
-              curve: Curves.elasticInOut,
+              curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 600),
               reverseDuration: Duration(milliseconds: 600),
               child: AboutView(),
