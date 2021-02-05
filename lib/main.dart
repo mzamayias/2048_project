@@ -5,15 +5,15 @@ import 'package:colorful_safe_area/colorful_safe_area.dart';
 
 import 'package:project_2048/views/current_view.dart'; // view
 
-void main() => runApp(MyApp());
+void main() => runApp(Project2048());
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key key}) : super(key: key);
+class Project2048 extends StatefulWidget {
+  const Project2048({Key key}) : super(key: key);
   @override
-  _MyAppState createState() => _MyAppState();
+  _Project2048State createState() => _Project2048State();
 }
 
-class _MyAppState extends State<MyApp> {
+class _Project2048State extends State<Project2048> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
