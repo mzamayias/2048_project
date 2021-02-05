@@ -15,6 +15,21 @@ class BaseView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leadingWidth: 0,
+        elevation: 0.6,
+        backgroundColor: Colors.grey[50],
+        title: Text(
+          viewTitle,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.blueAccent[700],
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       body: ColorfulSafeArea(
         color: Colors.grey[50],
         child: Container(

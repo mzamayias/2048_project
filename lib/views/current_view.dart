@@ -1,10 +1,8 @@
-import 'package:bubbled_navigation_bar/bubbled_navigation_bar.dart';
-import 'package:flutter/cupertino.dart';
+// import flutter packages
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:project_2048/views/components/bubbled_navigation_bar_item.dart';
+import 'package:flutter/cupertino.dart';
 
-// import project views
+// import pages
 import 'package:project_2048/views/game/game_view.dart';
 import 'package:project_2048/views/help/help_view.dart';
 import 'package:project_2048/views/options/options_view.dart';
@@ -22,87 +20,77 @@ class _CurrentViewState extends State<CurrentView> {
     HelpView(),
   ];
 
+  // https://stackoverflow.com/a/63258130/13504709
+  int _pageIndex = 0;
   PageController _pageController;
-  MenuPositionController _menuPositionController;
-  bool _userPageDragging = false;
 
   @override
   void initState() {
-    _menuPositionController = MenuPositionController(
-      initPosition: 0,
-    );
-
-    _pageController = PageController(
-      initialPage: 0,
-      keepPage: false,
-      viewportFraction: 1.0,
-    );
-
-    _pageController.addListener(
-      handlePageChange,
-    );
-
     super.initState();
+    _pageController = PageController(initialPage: _pageIndex);
   }
 
-  void handlePageChange() {
-    _menuPositionController.absolutePosition = _pageController.page;
-  }
-
-  // ignore: missing_return
-  bool checkUserDragging(ScrollNotification scrollNotification) {
-    if (scrollNotification is UserScrollNotification &&
-        scrollNotification.direction != ScrollDirection.idle) {
-      _userPageDragging = true;
-    } else if (scrollNotification is ScrollEndNotification) {
-      _userPageDragging = false;
-    }
-    if (_userPageDragging) {
-      _menuPositionController.findNearestTarget(_pageController.page);
-    }
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[50],
-      body: NotificationListener<ScrollNotification>(
-        onNotification: (scrollNotification) =>
-            checkUserDragging(scrollNotification),
-        child: PageView(
-          physics: BouncingScrollPhysics(),
-          controller: _pageController,
-          children: _views,
-        ),
+      body: PageView(
+        children: _views,
+        onPageChanged: onPageChanged,
+        controller: _pageController,
       ),
-      bottomNavigationBar: BubbledNavigationBar(
-        controller: _menuPositionController,
-        onTap: (index) => _pageController.animateToPage(
-          index,
-          curve: Curves.easeInOutQuad,
-          duration: Duration(milliseconds: 500),
-        ),
-        itemMargin: EdgeInsets.symmetric(horizontal: 18.0),
-        defaultBubbleColor: Colors.blueAccent[700],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _pageIndex,
+        onTap: onIconTapped,
         backgroundColor: Colors.grey[50],
-        items: <BubbledNavigationBarItem>[
-          bubbledNavigationBarItem(
-            Icons.gamepad_outlined,
-            Icons.gamepad_rounded,
-            'Game',
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedIconTheme: IconThemeData(
+          color: Colors.blueAccent[700],
+          size: 36,
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: Colors.blueAccent[700],
+          size: 36,
+        ),
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.gamepad_outlined),
+            activeIcon: Icon(Icons.gamepad_rounded),
+            label: 'Game',
           ),
-          bubbledNavigationBarItem(
-            Icons.settings_outlined,
-            Icons.settings_rounded,
-            'Options',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings_outlined),
+            activeIcon: Icon(Icons.settings_rounded),
+            label: 'Options',
           ),
-          bubbledNavigationBarItem(
-            Icons.help_outline_outlined,
-            Icons.help_rounded,
-            'Help',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.help_outline_outlined),
+            activeIcon: Icon(Icons.help_rounded),
+            label: 'Help',
           ),
         ],
       ),
     );
+  }
+
+  void onPageChanged(int pageIndex) {
+    setState(() {
+      this._pageIndex = pageIndex;
+    });
+  }
+
+  void onIconTapped(int pageIndex) {
+    this._pageController.animateToPage(
+          pageIndex,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeInToLinear,
+        );
   }
 }
