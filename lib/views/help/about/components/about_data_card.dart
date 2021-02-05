@@ -22,19 +22,19 @@ class AboutDataCard extends StatelessWidget {
         shadowColor: Colors.transparent,
         elevation: 0.0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          borderRadius: BorderRadius.all(Radius.circular(21.0)),
         ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.all(20.0),
+        child: Padding(
+          padding: EdgeInsets.all(21.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: Align(
+                  alignment: Alignment.centerLeft,
                   child: Text(
                     dataType,
                     textAlign: TextAlign.left,
@@ -46,13 +46,10 @@ class AboutDataCard extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: EdgeInsets.all(20.0),
+              Expanded(
+                flex: 2,
+                child: Align(
+                  alignment: Alignment.centerRight,
                   child: Text(
                     dataValue,
                     textAlign: TextAlign.right,
@@ -64,8 +61,8 @@ class AboutDataCard extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
