@@ -23,7 +23,7 @@ class ExitViewLayout extends StatelessWidget {
           cardText: 'Are you sure you would like to exit the app?',
         ),
         Spacer(
-          flex: 1,
+          flex: 30,
         ),
         BaseButton(
           buttonText: 'Yes',
@@ -33,7 +33,7 @@ class ExitViewLayout extends StatelessWidget {
           flex: 1,
         ),
         BaseButton(
-          buttonText: 'Go back',
+          buttonText: 'No',
           onPressed: () => Navigator.pop(context),
         ),
       ],
