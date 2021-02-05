@@ -1,14 +1,12 @@
 // import packages
-// import 'dart:io'; // used for exit command
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:project_2048/controllers/game/exit/exit_app.dart';
 
 // import view components
 import 'package:project_2048/views/components/base_button.dart'; // blue buttons
 import 'package:project_2048/views/components/base_view.dart';
-import 'package:project_2048/views/game/exit/components/exit_button.dart'; // view blueprint
+import 'package:project_2048/views/game/exit/layouts/exit_layout.dart'; // view blueprint
 
 class GameView extends StatelessWidget {
   const GameView({
@@ -34,7 +32,16 @@ class GameView extends StatelessWidget {
         ),
         BaseButton(
           buttonText: 'Exit',
-          onPressed: () => exitApp(context),
+          onPressed: () => Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.leftToRightWithFade,
+              curve: Curves.easeInToLinear,
+              duration: Duration(milliseconds: 600),
+              reverseDuration: Duration(milliseconds: 600),
+              child: ExitViewLayout(),
+            ),
+          ),
         ),
       ],
     );
