@@ -18,17 +18,20 @@ class GameView extends StatelessWidget {
     return BaseView(
       viewTitle: 'Game',
       children: <Widget>[
+        Spacer(
+          flex: 29,
+        ),
         BaseButton(
           buttonText: 'New game',
         ),
-        SizedBox(
-          height: 18,
+        Spacer(
+          flex: 1,
         ),
         BaseButton(
           buttonText: 'Continue game',
         ),
-        SizedBox(
-          height: 18,
+        Spacer(
+          flex: 1,
         ),
         BaseButton(
           buttonText: 'Exit',
