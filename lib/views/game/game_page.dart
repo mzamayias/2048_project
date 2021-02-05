@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 // import view components
-import 'package:project_2048/views/components/base_button.dart'; // blue buttons
 import 'package:project_2048/views/components/base_page.dart';
-import 'package:project_2048/views/game/exit/layouts/exit_page_layout.dart'; // view blueprint
+import 'package:project_2048/views/components/base_button.dart';
+import 'package:project_2048/views/game/exit/layouts/exit_page_layout.dart';
 
 class GamePage extends StatelessWidget {
   const GamePage({
