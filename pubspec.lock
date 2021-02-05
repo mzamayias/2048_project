@@ -43,13 +43,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.3"
-  bubbled_navigation_bar:
-    dependency: "direct main"
-    description:
-      name: bubbled_navigation_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.4"
   characters:
     dependency: transitive
     description:
@@ -92,13 +85,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.1"
-  concentric_transition:
-    dependency: "direct main"
-    description:
-      name: concentric_transition
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.1"
   convert:
     dependency: transitive
     description:
@@ -127,13 +113,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  curved_navigation_bar:
-    dependency: "direct main"
-    description:
-      name: curved_navigation_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.7"
   fake_async:
     dependency: transitive
     description:

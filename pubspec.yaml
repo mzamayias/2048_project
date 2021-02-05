@@ -7,11 +7,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bubbled_navigation_bar: ^0.0.4
   colorful_safe_area: ^0.2.1
-  concentric_transition: ^0.1.1
   cupertino_icons: ^1.0.2
-  curved_navigation_bar: ^0.3.7
   page_transition: ^1.1.7+6
   provider: ^4.0.4
 dev_dependencies:
