@@ -20,10 +20,10 @@ class HelpPage extends StatelessWidget {
           onPressed: () => Navigator.push(
             context,
             PageTransition(
-              type: PageTransitionType.rightToLeftWithFade,
+              type: PageTransitionType.fade,
               curve: Curves.easeInToLinear,
-              duration: Duration(milliseconds: 300),
-              reverseDuration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 210),
+              reverseDuration: Duration(milliseconds: 210),
               child: AboutPage(),
             ),
           ),
