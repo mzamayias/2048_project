@@ -1,0 +1,243 @@
+@startuml
+set namespaceSeparator ::
+
+class "project_2048::models::game::game::tile.dart::Tile" {
+  -int _horizontalPosition
+  -int _verticalPosition
+  -int _value
+  -bool _canMerge
+  -bool _isNew
+  +int hashCode
+  +int horizontalPosition
+  +int verticalPosition
+  +int value
+  +bool canMerge
+  +bool isNew
+  +bool isEmpty()
+  +bool ==()
+}
+
+class "project_2048::models::game::game::to_be_removed.dart::Board" {
+  +int row
+  +int column
+  +int score
+  -List<List<Tile>> _boardTiles
+  +void initBoard()
+  +void moveLeft()
+  +void moveRight()
+  +void moveUp()
+  +void moveDown()
+  +bool canMoveLeft()
+  +bool canMoveRight()
+  +bool canMoveUp()
+  +bool canMoveDown()
+  +void mergeLeft()
+  +void mergeRight()
+  +void mergeUp()
+  +void mergeDown()
+  +bool canMerge()
+  +void merge()
+  +bool gameOver()
+  +Tile getTile()
+  +void randomEmptyTile()
+  +void resetCanMerge()
+}
+
+class "project_2048::models::game::game::to_be_removed.dart::Tile" {
+  +int row
+  +int column
+  +int value
+  +bool canMerge
+  +bool isNew
+  +int hashCode
+  +bool isEmpty()
+  +bool ==()
+}
+
+class "project_2048::models::game::game::player.dart::Player" {
+  -int _score
+  +int score
+}
+
+class "project_2048::models::game::game::board.dart::Board" {
+  -int _size
+  -List<List<Tile>> _boardTiles
+  +int size
+  +List<List<Tile>> boardTiles
+  +void resetCanMerge()
+  +void randomEmptyTile()
+  +void initBoard()
+  +bool canMerge()
+  +bool merge()
+  +bool canMoveLeft()
+  +bool canMoveRight()
+  +bool canMoveUp()
+  +bool canMoveDown()
+  +void mergeLeft()
+  +void mergeRight()
+  +void mergeUp()
+  +void mergeDown()
+  +void moveLeft()
+  +void moveRight()
+  +void moveUp()
+  +void moveDown()
+  +bool gameOver()
+}
+
+"project_2048::models::game::game::board_actions.dart::BoardActions" <|-- "project_2048::models::game::game::board.dart::Board"
+
+abstract class "project_2048::models::game::game::board_actions.dart::BoardActions" {
+  +void resetCanMerge()
+  +void randomEmptyTile()
+  +void initBoard()
+  +bool canMerge()
+  +bool merge()
+  +bool canMoveLeft()
+  +bool canMoveRight()
+  +bool canMoveUp()
+  +bool canMoveDown()
+  +void mergeLeft()
+  +void mergeRight()
+  +void mergeUp()
+  +void mergeDown()
+  +void moveLeft()
+  +void moveRight()
+  +void moveUp()
+  +void moveDown()
+  +bool gameOver()
+}
+
+class "project_2048::models::help::about::about_model.dart::AboutModel" {
+  +Developer developer
+  +App app
+}
+
+"project_2048::models::help::about::about_model.dart::AboutModel" o-- "project_2048::models::help::about::developer.dart::Developer"
+"project_2048::models::help::about::about_model.dart::AboutModel" o-- "project_2048::models::help::about::app.dart::App"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "project_2048::models::help::about::about_model.dart::AboutModel"
+
+class "project_2048::models::help::about::developer.dart::Developer" {
+  +dynamic firstName
+  +dynamic lastName
+}
+
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "project_2048::models::help::about::developer.dart::Developer"
+
+class "project_2048::models::help::about::app.dart::App" {
+  +dynamic name
+  +dynamic version
+}
+
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "project_2048::models::help::about::app.dart::App"
+
+class "project_2048::main.dart::Project2048" {
+  +_Project2048State createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "project_2048::main.dart::Project2048"
+
+class "project_2048::main.dart::_Project2048State" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "project_2048::main.dart::_Project2048State"
+
+class "project_2048::controllers::help::about::about_controller.dart::AboutController" {
+  +Developer developerGetter()
+  +App appGetter()
+}
+
+class "project_2048::views::options::options_page.dart::OptionsPage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::options::options_page.dart::OptionsPage"
+
+class "project_2048::views::game::exit::layouts::exit_page_layout.dart::ExitPageLayout" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::game::exit::layouts::exit_page_layout.dart::ExitPageLayout"
+
+class "project_2048::views::game::game_page.dart::GamePage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::game::game_page.dart::GamePage"
+
+class "project_2048::views::current_page.dart::CurrentPage" {
+  +_CurrentPageState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "project_2048::views::current_page.dart::CurrentPage"
+
+class "project_2048::views::current_page.dart::_CurrentPageState" {
+  {static} -List<Widget> _pages
+  -int _pageIndex
+  -PageController _pageController
+  +void initState()
+  +void dispose()
+  +Widget build()
+  +void onPageChanged()
+  +void onIconTapped()
+}
+
+"project_2048::views::current_page.dart::_CurrentPageState" o-- "flutter::src::widgets::page_view.dart::PageController"
+"flutter::src::widgets::framework.dart::State<T>" <|-- "project_2048::views::current_page.dart::_CurrentPageState"
+
+class "project_2048::views::components::base_page.dart::BasePage" {
+  +dynamic viewTitle
+  +List<Widget> children
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::components::base_page.dart::BasePage"
+
+class "project_2048::views::components::base_card.dart::BaseCard" {
+  +dynamic cardText
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::components::base_card.dart::BaseCard"
+
+class "project_2048::views::components::base_button.dart::BaseButton" {
+  +dynamic buttonText
+  +Function onPressed
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::components::base_button.dart::BaseButton"
+
+class "project_2048::views::help::help_page.dart::HelpPage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::help::help_page.dart::HelpPage"
+
+class "project_2048::views::help::about::components::about_data_card.dart::AboutDataCard" {
+  +int flex
+  +dynamic dataType
+  +dynamic dataValue
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::help::about::components::about_data_card.dart::AboutDataCard"
+
+class "project_2048::views::help::about::layouts::about_page_layout.dart::AboutPageLayout" {
+  +Developer developer
+  +App app
+  +Widget build()
+}
+
+"project_2048::views::help::about::layouts::about_page_layout.dart::AboutPageLayout" o-- "project_2048::models::help::about::developer.dart::Developer"
+"project_2048::views::help::about::layouts::about_page_layout.dart::AboutPageLayout" o-- "project_2048::models::help::about::app.dart::App"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::help::about::layouts::about_page_layout.dart::AboutPageLayout"
+
+class "project_2048::views::help::about::about_page.dart::AboutPage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "project_2048::views::help::about::about_page.dart::AboutPage"
+
+
+@enduml
