@@ -19,6 +19,7 @@ class BasePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         leadingWidth: 0,
         elevation: 0.6,
+        centerTitle: true,
         backgroundColor: Colors.grey[50],
         title: Text(
           viewTitle,
