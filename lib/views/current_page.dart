@@ -46,6 +46,7 @@ class _CurrentPageState extends State<CurrentPage> {
         controller: _pageController,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         currentIndex: _pageIndex,
         onTap: onIconTapped,
         backgroundColor: Colors.grey[50],
