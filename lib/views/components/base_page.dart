@@ -5,7 +5,7 @@ import 'package:colorful_safe_area/colorful_safe_area.dart';
 class BasePage extends StatelessWidget {
   const BasePage({
     Key key,
-    this.viewTitle,
+    @required this.viewTitle,
     this.children,
   }) : super(key: key);
 
@@ -18,7 +18,7 @@ class BasePage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leadingWidth: 0,
-        elevation: 0.6,
+        elevation: 0,
         centerTitle: true,
         backgroundColor: Colors.grey[50],
         title: Text(
@@ -37,7 +37,7 @@ class BasePage extends StatelessWidget {
           alignment: Alignment.topCenter,
           color: Colors.grey[50],
           child: Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(21),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               mainAxisSize: MainAxisSize.max,
