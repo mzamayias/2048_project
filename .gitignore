@@ -49,3 +49,6 @@ app.*.map.json
 /lib/models/to_be_removed.dart
 lib/models/game/to_be_removed.dart
 lib/models/game/game/to_be_removed.dart
+lib/models/game/FTI-main.dart
+lib/models/game/FTI-model.dart
+lib/models/game/FTI-utils.dart
