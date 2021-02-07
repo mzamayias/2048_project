@@ -12,11 +12,11 @@ class BaseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        borderRadius: BorderRadius.all(Radius.circular(21)),
       ),
       color: Colors.grey[850],
       child: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(21),
         child: Text(
           cardText,
           textAlign: TextAlign.center,
