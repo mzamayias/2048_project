@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 
 // import custom packages
-import 'package:project_2048/views/current_page.dart';
+import 'package:project_2048/views/current_view.dart';
 
 void main() => runApp(Project2048());
 
@@ -30,7 +30,7 @@ class _Project2048State extends State<Project2048> {
         ),
         child: ColorfulSafeArea(
           color: Colors.grey[50],
-          child: CurrentPage(),
+          child: CurrentView(),
         ),
       ),
     );

@@ -18,7 +18,7 @@ class AboutDataCard extends StatelessWidget {
     return Expanded(
       flex: flex,
       child: Card(
-        color: Colors.cyan[700],
+        color: Colors.blue,
         shadowColor: Colors.transparent,
         elevation: 0.0,
         shape: RoundedRectangleBorder(

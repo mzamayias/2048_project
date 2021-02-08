@@ -3,35 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 // import view components
-import 'package:project_2048/views/components/base_page.dart';
+import 'package:project_2048/views/components/base_view.dart';
 import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/game/exit/layouts/exit_page_layout.dart';
+import 'package:project_2048/views/game/exit/layouts/exit_view_layout.dart';
 
-class GamePage extends StatelessWidget {
-  const GamePage({
+class GameView extends StatelessWidget {
+  const GameView({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
+    return BaseView(
       viewTitle: 'Game',
       children: <Widget>[
-        Spacer(
-          flex: 29,
-        ),
-        BaseButton(
-          buttonText: 'New game',
-        ),
-        Spacer(
-          flex: 1,
-        ),
-        BaseButton(
-          buttonText: 'Continue game',
-        ),
-        Spacer(
-          flex: 1,
-        ),
+        Spacer(flex: 31),
+        BaseButton(buttonText: 'New game'),
+        Spacer(flex: 1),
+        BaseButton(buttonText: 'Continue game'),
+        Spacer(flex: 1),
         BaseButton(
           buttonText: 'Exit',
           onPressed: () => Navigator.push(
@@ -41,7 +31,7 @@ class GamePage extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: ExitPageLayout(),
+              child: ExitViewLayout(),
             ),
           ),
         ),

@@ -8,16 +8,16 @@ import 'package:project_2048/models/help/about/about_model.dart';
 import 'package:project_2048/controllers/help/about/about_controller.dart';
 
 // import about view layout
-import 'package:project_2048/views/help/about/layouts/about_page_layout.dart';
+import 'package:project_2048/views/help/about/layouts/about_view_layout.dart';
 
-class AboutPage extends StatelessWidget {
+class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AboutController aboutController = AboutController();
     return ChangeNotifierProvider<AboutModel>(
       create: (context) => AboutModel(),
       child: Consumer<AboutModel>(
-        builder: (context, viewModel, child) => AboutPageLayout(
+        builder: (context, viewModel, child) => AboutViewLayout(
           developer: aboutController.developerGetter(context),
           app: aboutController.appGetter(context),
         ),
