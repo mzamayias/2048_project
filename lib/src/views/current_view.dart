@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 // import pages
-import 'package:project_2048/views/game/game_view.dart';
-import 'package:project_2048/views/help/help_view.dart';
-import 'package:project_2048/views/options/options_view.dart';
+import 'package:project_2048/src/views/game/game_view.dart';
+import 'package:project_2048/src/views/help/help_view.dart';
+import 'package:project_2048/src/views/options/options_view.dart';
 
 class CurrentView extends StatefulWidget {
   const CurrentView({Key key}) : super(key: key);

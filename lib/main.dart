@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 
 // import custom packages
-import 'package:project_2048/views/current_view.dart';
+import 'package:project_2048/src/views/current_view.dart';
 
 void main() => runApp(Project2048());
 

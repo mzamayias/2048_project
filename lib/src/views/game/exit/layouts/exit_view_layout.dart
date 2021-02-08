@@ -5,9 +5,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 // import view components
-import 'package:project_2048/views/components/base_view.dart';
-import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/components/base_card.dart';
+import 'package:project_2048/src/views/components/base_view.dart';
+import 'package:project_2048/src/views/components/base_button.dart';
+import 'package:project_2048/src/views/components/base_card.dart';
 
 class ExitViewLayout extends StatelessWidget {
   const ExitViewLayout({

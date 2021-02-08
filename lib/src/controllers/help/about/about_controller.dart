@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // import models
-import 'package:project_2048/models/help/about/about_model.dart';
-import 'package:project_2048/models/help/about/app.dart';
-import 'package:project_2048/models/help/about/developer.dart';
+import 'package:project_2048/src/models/help/about/about_model.dart';
+import 'package:project_2048/src/models/help/about/app.dart';
+import 'package:project_2048/src/models/help/about/developer.dart';
 
 class AboutController {
   AboutController();

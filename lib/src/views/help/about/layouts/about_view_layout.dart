@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 
 // import models
-import 'package:project_2048/models/help/about/app.dart';
-import 'package:project_2048/models/help/about/developer.dart';
+import 'package:project_2048/src/models/help/about/app.dart';
+import 'package:project_2048/src/models/help/about/developer.dart';
 
 // import view components
-import 'package:project_2048/views/components/base_view.dart';
-import 'package:project_2048/views/components/base_card.dart';
-import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/help/about/components/about_data_card.dart';
+import 'package:project_2048/src/views/components/base_view.dart';
+import 'package:project_2048/src/views/components/base_card.dart';
+import 'package:project_2048/src/views/components/base_button.dart';
+import 'package:project_2048/src/views/help/about/components/about_data_card.dart';
 
 class AboutViewLayout extends StatelessWidget {
   const AboutViewLayout({

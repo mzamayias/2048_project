@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 // import view components
-import 'package:project_2048/views/components/base_view.dart';
-import 'package:project_2048/views/components/base_button.dart';
-import 'package:project_2048/views/game/exit/layouts/exit_view_layout.dart';
+import 'package:project_2048/src/views/components/base_view.dart';
+import 'package:project_2048/src/views/components/base_button.dart';
+import 'package:project_2048/src/views/game/exit/layouts/exit_view_layout.dart';
 
 class GameView extends StatelessWidget {
   const GameView({
