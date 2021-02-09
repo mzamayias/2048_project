@@ -13,11 +13,11 @@ class TwoStringCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Card(
-        shape: RoundedRectangleBorder(
+      child: Container(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(21)),
+          color: Colors.lightBlue[900],
         ),
-        color: Colors.lightBlue[900],
         child: Padding(
           padding: EdgeInsets.all(21.0),
           child: Row(
