@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_2048/src/views/game/twenty_forty_eight/twenty_forty_eight.dart';
 import 'package:project_2048/src/views/widgets/base_view.dart';
 import 'package:project_2048/src/views/widgets/base_button.dart';
-import 'package:project_2048/src/views/widgets/two_string_container.dart';
+import 'package:project_2048/src/views/widgets/two_string_card.dart';
 
 class BoardView extends StatelessWidget {
   const BoardView({Key key}) : super(key: key);
@@ -29,7 +29,7 @@ class BoardView extends StatelessWidget {
           ],
         ),
         TwentyFourtyEight(),
-        TwoStringContainer(
+        TwoStringCard(
           dataType: 'Score',
           dataValue: '${10676}',
         ),

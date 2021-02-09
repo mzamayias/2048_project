@@ -10,8 +10,8 @@ import 'package:project_2048/src/controllers/help/about/about_controller.dart';
 // import about view layout
 import 'package:project_2048/src/views/widgets/base_button.dart';
 import 'package:project_2048/src/views/widgets/base_view.dart';
-import 'package:project_2048/src/views/widgets/one_string_container.dart';
-import 'package:project_2048/src/views/widgets/two_string_container.dart';
+import 'package:project_2048/src/views/widgets/one_string_card.dart';
+import 'package:project_2048/src/views/widgets/two_string_card.dart';
 
 class AboutView extends StatelessWidget {
   @override
@@ -21,21 +21,21 @@ class AboutView extends StatelessWidget {
     return BaseView(
       viewTitle: 'About',
       children: <Widget>[
-        OneStringContainer(
+        OneStringCard(
           cardText: 'Developer details',
         ),
-        TwoStringContainer(
+        TwoStringCard(
           dataType: 'Name',
           dataValue: '${_developer.firstName} ${_developer.lastName}',
         ),
-        OneStringContainer(
+        OneStringCard(
           cardText: 'App details',
         ),
-        TwoStringContainer(
+        TwoStringCard(
           dataType: 'Name',
           dataValue: '${_app.name}',
         ),
-        TwoStringContainer(
+        TwoStringCard(
           dataType: 'Version',
           dataValue: '${_app.version}',
         ),

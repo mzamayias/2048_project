@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TwoStringContainer extends StatelessWidget {
-  const TwoStringContainer({
+class TwoStringCard extends StatelessWidget {
+  const TwoStringCard({
     Key key,
     this.flex,
     @required this.dataType,
