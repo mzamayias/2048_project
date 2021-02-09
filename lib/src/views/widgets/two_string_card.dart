@@ -1,29 +1,23 @@
-// import packages
 import 'package:flutter/material.dart';
 
-class AboutDataCard extends StatelessWidget {
-  const AboutDataCard({
+class TwoStringCard extends StatelessWidget {
+  const TwoStringCard({
     Key key,
-    @required this.flex,
     @required this.dataType,
     @required this.dataValue,
   }) : super(key: key);
 
-  final int flex;
   final String dataType;
   final String dataValue;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: flex,
       child: Card(
-        color: Colors.blue,
-        shadowColor: Colors.transparent,
-        elevation: 0.0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(21.0)),
+          borderRadius: BorderRadius.all(Radius.circular(21)),
         ),
+        color: Colors.lightBlue[900],
         child: Padding(
           padding: EdgeInsets.all(21.0),
           child: Row(
@@ -32,7 +26,6 @@ class AboutDataCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Expanded(
-                flex: 1,
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -47,7 +40,6 @@ class AboutDataCard extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 2,
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(

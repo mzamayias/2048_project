@@ -3,10 +3,10 @@
 // import flutter packages
 import 'package:flutter/material.dart';
 
-// import view components
-import 'package:project_2048/src/views/components/base_view.dart';
-import 'package:project_2048/src/views/components/base_button.dart';
-import 'package:project_2048/src/views/components/base_card.dart';
+// import view widgets
+import 'package:project_2048/src/views/widgets/base_view.dart';
+import 'package:project_2048/src/views/widgets/base_button.dart';
+import 'package:project_2048/src/views/widgets/one_string_card.dart';
 
 class ExitViewLayout extends StatelessWidget {
   const ExitViewLayout({
@@ -18,7 +18,7 @@ class ExitViewLayout extends StatelessWidget {
     return BaseView(
       viewTitle: 'Exit',
       children: <Widget>[
-        BaseCard(
+        OneStringCard(
           cardText: 'Are you sure you would like to exit the app?',
         ),
         Spacer(
