@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class TwentyFourtyEight extends StatelessWidget {
-  const TwentyFourtyEight({Key key}) : super(key: key);
+class PlayingAreaView extends StatelessWidget {
+  const PlayingAreaView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
