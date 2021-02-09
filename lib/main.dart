@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 // import pub packages
 import 'package:colorful_safe_area/colorful_safe_area.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // import custom packages
 import 'package:project_2048/src/views/current_view.dart';
@@ -21,6 +22,11 @@ class _Project2048State extends State<Project2048> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: GoogleFonts.juraTextTheme(
+          Theme.of(context).textTheme,
+        ),
+      ),
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,

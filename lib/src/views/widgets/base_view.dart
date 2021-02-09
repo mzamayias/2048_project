@@ -1,6 +1,7 @@
 // import packages
 import 'package:flutter/material.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BaseView extends StatelessWidget {
   const BaseView({
@@ -25,10 +26,12 @@ class BaseView extends StatelessWidget {
         title: Text(
           viewTitle,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.blueAccent[700],
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
+          style: GoogleFonts.jura(
+            textStyle: TextStyle(
+              color: Colors.blueAccent[700],
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
       ),
