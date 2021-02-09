@@ -26,12 +26,14 @@ class GameBoardView extends StatelessWidget {
               16,
               (index) {
                 int powerOfTwo = pow(2, index);
-                if (powerOfTwo >= 2 && powerOfTwo <= 2048) {
+                if (2 <= powerOfTwo && powerOfTwo <= 2048) {
                   return TileView(
                     value: powerOfTwo,
                   );
                 } else {
-                  return TileView();
+                  return TileView(
+                    value: null,
+                  );
                 }
               },
             ),
