@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class App extends ChangeNotifier {
+class App {
   String name;
   String version;
 

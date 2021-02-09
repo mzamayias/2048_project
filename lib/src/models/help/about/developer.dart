@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Developer extends ChangeNotifier {
+class Developer {
   String firstName;
   String lastName;
 

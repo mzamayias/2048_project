@@ -1,4 +1,3 @@
-
 import 'developer.dart';
 import 'app.dart';
 
@@ -7,12 +6,11 @@ class AboutModel {
     firstName: 'Mike',
     lastName: 'Zamayias',
   );
+
   App _app = App(
     name: '2048 Semester Project',
     version: 'Under developement',
   );
-
-  AboutModel();
 
   Developer get developer => this._developer;
 
