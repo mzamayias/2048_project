@@ -16,7 +16,11 @@ class BaseButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
-      shadowColor: Colors.transparent,
+      shadowColor: Colors.grey[850],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(21)),
+      ),
+      elevation: 3,
       child: FlatButton(
         onPressed: onPressed ?? () => print('"$buttonText" pressed!'),
         shape: RoundedRectangleBorder(

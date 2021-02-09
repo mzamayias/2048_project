@@ -17,11 +17,11 @@ class TwoStringContainer extends StatelessWidget {
     return Expanded(
       flex: flex ?? 1,
       child: Card(
+        shadowColor: Colors.grey[850],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(21)),
         ),
-        elevation: 0,
-        shadowColor: Colors.transparent,
+        elevation: 3,
         color: Colors.lightBlue[900],
         child: Padding(
           padding: EdgeInsets.all(21.0),

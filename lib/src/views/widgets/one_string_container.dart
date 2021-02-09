@@ -11,11 +11,11 @@ class OneStringContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shadowColor: Colors.grey[850],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(21)),
       ),
-      elevation: 0,
-      shadowColor: Colors.transparent,
+      elevation: 3,
       color: Colors.grey[850],
       child: Padding(
         padding: EdgeInsets.all(21),
