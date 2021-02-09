@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project_2048/src/views/game/playing_area/buttons/redo_button.dart';
+import 'package:project_2048/src/views/game/playing_area/buttons/restart_button.dart';
 import 'package:project_2048/src/views/game/playing_area/game_board/game_board_view.dart';
+import 'package:project_2048/src/views/game/playing_area/score_board/score_board_view.dart';
 import 'package:project_2048/src/views/widgets/base_view.dart';
-import 'package:project_2048/src/views/widgets/base_button.dart';
-import 'package:project_2048/src/views/widgets/two_string_card.dart';
 
 class PlayingAreaView extends StatelessWidget {
   const PlayingAreaView({Key key}) : super(key: key);
@@ -16,27 +17,13 @@ class PlayingAreaView extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Expanded(
-              child: BaseButton(
-                buttonText: 'Restart',
-              ),
-            ),
-            Expanded(
-              child: BaseButton(
-                buttonText: 'Redo',
-              ),
-            ),
+            RestartButton(),
+            RedoButton(),
           ],
         ),
         GameBoardView(),
-        TwoStringCard(
-          dataType: 'Score',
-          dataValue: '${10676}',
-        ),
-        BaseButton(
-          buttonText: 'Go back',
-          onPressed: () => Navigator.pop(context),
-        ),
+        ScoreBoard(),
+        BackButton(),
       ],
     );
   }
