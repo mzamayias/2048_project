@@ -8,8 +8,8 @@ import 'package:project_2048/src/views/widgets/base_view.dart';
 import 'package:project_2048/src/views/widgets/base_button.dart';
 import 'package:project_2048/src/views/widgets/one_string_card.dart';
 
-class ExitViewLayout extends StatelessWidget {
-  const ExitViewLayout({
+class ExitView extends StatelessWidget {
+  const ExitView({
     Key key,
   }) : super(key: key);
 

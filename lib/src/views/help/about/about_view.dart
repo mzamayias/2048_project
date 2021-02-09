@@ -9,9 +9,9 @@ import 'package:project_2048/src/controllers/help/about/about_controller.dart';
 
 // import about view layout
 import 'package:project_2048/src/views/widgets/base_button.dart';
+import 'package:project_2048/src/views/widgets/base_view.dart';
 import 'package:project_2048/src/views/widgets/one_string_card.dart';
 import 'package:project_2048/src/views/widgets/two_string_card.dart';
-import 'package:project_2048/src/views/widgets/base_view.dart';
 
 class AboutView extends StatelessWidget {
   @override
