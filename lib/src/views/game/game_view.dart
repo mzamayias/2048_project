@@ -1,7 +1,7 @@
 // import packages
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:project_2048/src/views/game/board/board_view.dart';
+import 'package:project_2048/src/views/game/playing_area/playing_area_view.dart';
 
 // import view widgets
 import 'package:project_2048/src/views/widgets/base_view.dart';
@@ -27,7 +27,7 @@ class GameView extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: BoardView(),
+              child: PlayingAreaView(),
             ),
           ),
         ),
@@ -40,7 +40,7 @@ class GameView extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: BoardView(),
+              child: PlayingAreaView(),
             ),
           ),
         ),
