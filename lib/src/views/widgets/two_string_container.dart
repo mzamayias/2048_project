@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 
-class TwoStringCard extends StatelessWidget {
-  const TwoStringCard({
+class TwoStringContainer extends StatelessWidget {
+  const TwoStringContainer({
     Key key,
+    this.flex,
     @required this.dataType,
     @required this.dataValue,
   }) : super(key: key);
 
+  final int flex;
   final String dataType;
   final String dataValue;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
+      flex: flex ?? 1,
+      child: Card(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(21)),
-          color: Colors.lightBlue[900],
         ),
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        color: Colors.lightBlue[900],
         child: Padding(
           padding: EdgeInsets.all(21.0),
           child: Row(

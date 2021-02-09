@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OneStringCard extends StatelessWidget {
-  const OneStringCard({
+class OneStringContainer extends StatelessWidget {
+  const OneStringContainer({
     Key key,
     this.cardText,
   }) : super(key: key);
@@ -10,11 +10,13 @@ class OneStringCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return Card(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(21)),
-        color: Colors.grey[850],
       ),
+      elevation: 0,
+      shadowColor: Colors.transparent,
+      color: Colors.grey[850],
       child: Padding(
         padding: EdgeInsets.all(21),
         child: Text(
