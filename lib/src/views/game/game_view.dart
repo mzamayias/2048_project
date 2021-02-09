@@ -1,6 +1,7 @@
 // import packages
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:project_2048/src/views/game/board/board_view.dart';
 
 // import view widgets
 import 'package:project_2048/src/views/widgets/base_view.dart';
@@ -18,9 +19,33 @@ class GameView extends StatelessWidget {
       viewTitle: 'Game',
       children: <Widget>[
         Spacer(flex: 31),
-        BaseButton(buttonText: 'New game'),
+        BaseButton(
+          buttonText: 'New game',
+          onPressed: () => Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              curve: Curves.easeInToLinear,
+              duration: Duration(milliseconds: 210),
+              reverseDuration: Duration(milliseconds: 210),
+              child: BoardView(),
+            ),
+          ),
+        ),
         Spacer(flex: 1),
-        BaseButton(buttonText: 'Continue game'),
+        BaseButton(
+          buttonText: 'Continue game',
+          onPressed: () => Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              curve: Curves.easeInToLinear,
+              duration: Duration(milliseconds: 210),
+              reverseDuration: Duration(milliseconds: 210),
+              child: BoardView(),
+            ),
+          ),
+        ),
         Spacer(flex: 1),
         BaseButton(
           buttonText: 'Exit',
@@ -31,7 +56,7 @@ class GameView extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: ExitViewLayout(),
+              child: ExitView(),
             ),
           ),
         ),
