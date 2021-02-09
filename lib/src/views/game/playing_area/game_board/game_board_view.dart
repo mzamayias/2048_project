@@ -1,7 +1,7 @@
-import 'dart:ui';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:project_2048/src/views/widgets/one_string_card.dart';
+import 'package:project_2048/src/views/game/playing_area/game_board/tile_view.dart';
 
 class GameBoardView extends StatelessWidget {
   const GameBoardView({Key key}) : super(key: key);
@@ -12,37 +12,29 @@ class GameBoardView extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(21)),
       ),
-      color: Colors.cyan[700],
+      color: Colors.cyan[700].withOpacity(0.9),
       shadowColor: Colors.grey[850],
       elevation: 3,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.all(21),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              GridView.count(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                crossAxisCount: 4,
-                children: List.generate(
-                  16,
-                  (index) => OneStringCard(
-                    cardText: index.toString(),
-                  ),
-                ),
-              ),
-              Text(
-                'Here you\'ll play the game. It needs to be implemented. ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  color: Colors.amber[900],
-                  fontSize: 39,
-                  backgroundColor: Colors.cyanAccent.withOpacity(0.9),
-                ),
-              ),
-            ],
+          padding: EdgeInsets.all(9),
+          child: GridView.count(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            crossAxisCount: 4,
+            children: List.generate(
+              16,
+              (index) {
+                int powerOfTwo = pow(2, index);
+                if (powerOfTwo >= 2 && powerOfTwo <= 2048) {
+                  return TileView(
+                    value: powerOfTwo,
+                  );
+                } else {
+                  return TileView();
+                }
+              },
+            ),
           ),
         ),
       ),
