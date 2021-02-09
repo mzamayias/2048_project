@@ -45,38 +45,54 @@ class _CurrentViewState extends State<CurrentView> {
         onPageChanged: onPageChanged,
         controller: _pageController,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 3,
-        currentIndex: _pageIndex,
-        onTap: onIconTapped,
-        backgroundColor: Colors.grey[50],
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedIconTheme: IconThemeData(
-          color: Colors.blueAccent[700],
-          size: 33,
+      bottomNavigationBar: PhysicalModel(
+        color: Colors.transparent,
+        shadowColor: Colors.grey[850],
+        elevation: 9,
+        child: Container(
+          decoration: BoxDecoration(
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.grey[850].withOpacity(0.3),
+                spreadRadius: 1,
+                blurRadius: 1.2,
+              ),
+            ],
+          ),
+          child: BottomNavigationBar(
+            elevation: 0,
+            currentIndex: _pageIndex,
+            onTap: onIconTapped,
+            backgroundColor: Colors.grey[50],
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            selectedIconTheme: IconThemeData(
+              color: Colors.blueAccent[700],
+              size: 33,
+            ),
+            unselectedIconTheme: IconThemeData(
+              color: Colors.blueAccent[700],
+              size: 33,
+            ),
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.gamepad_outlined),
+                activeIcon: Icon(Icons.gamepad_rounded),
+                label: 'Game',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings_outlined),
+                activeIcon: Icon(Icons.settings_rounded),
+                label: 'Options',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.help_outline_outlined),
+                activeIcon: Icon(Icons.help_rounded),
+                label: 'Help',
+              ),
+            ],
+          ),
         ),
-        unselectedIconTheme: IconThemeData(
-          color: Colors.blueAccent[700],
-          size: 33,
-        ),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.gamepad_outlined),
-            activeIcon: Icon(Icons.gamepad_rounded),
-            label: 'Game',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
-            activeIcon: Icon(Icons.settings_rounded),
-            label: 'Options',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.help_outline_outlined),
-            activeIcon: Icon(Icons.help_rounded),
-            label: 'Help',
-          ),
-        ],
       ),
     );
   }
