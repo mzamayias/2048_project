@@ -52,3 +52,5 @@ lib/models/game/game/to_be_removed.dart
 lib/models/game/FTI-main.dart
 lib/models/game/FTI-model.dart
 lib/models/game/FTI-utils.dart
+lib/src/views/widgets/base_view.dart
+ios/Podfile.lock
