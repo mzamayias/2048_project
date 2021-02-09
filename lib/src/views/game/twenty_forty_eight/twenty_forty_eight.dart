@@ -16,15 +16,7 @@ class TwentyFourtyEight extends StatelessWidget {
       elevation: 3,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.all(21),
-          child: Text(
-            'datadatadatadatadatdatadatadatadatadatdatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadata',
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.grey[50],
-              fontWeight: FontWeight.w900,
-            ),
-          ),
+          padding: EdgeInsets.all(21)
         ),
       ),
     );
