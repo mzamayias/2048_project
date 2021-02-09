@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // import view widgets
 import 'package:project_2048/src/views/widgets/base_view.dart';
 import 'package:project_2048/src/views/widgets/base_button.dart';
-import 'package:project_2048/src/views/widgets/one_string_card.dart';
+import 'package:project_2048/src/views/widgets/one_string_container.dart';
 
 class ExitView extends StatelessWidget {
   const ExitView({
@@ -18,7 +18,7 @@ class ExitView extends StatelessWidget {
     return BaseView(
       viewTitle: 'Exit',
       children: <Widget>[
-        OneStringCard(
+        OneStringContainer(
           cardText: 'Are you sure you would like to exit the app?',
         ),
         Spacer(

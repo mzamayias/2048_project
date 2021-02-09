@@ -18,7 +18,6 @@ class GameView extends StatelessWidget {
     return BaseView(
       viewTitle: 'Game',
       children: <Widget>[
-        Spacer(flex: 31),
         BaseButton(
           buttonText: 'New game',
           onPressed: () => Navigator.push(
@@ -32,7 +31,6 @@ class GameView extends StatelessWidget {
             ),
           ),
         ),
-        Spacer(flex: 1),
         BaseButton(
           buttonText: 'Continue game',
           onPressed: () => Navigator.push(
@@ -46,7 +44,6 @@ class GameView extends StatelessWidget {
             ),
           ),
         ),
-        Spacer(flex: 1),
         BaseButton(
           buttonText: 'Exit',
           onPressed: () => Navigator.push(

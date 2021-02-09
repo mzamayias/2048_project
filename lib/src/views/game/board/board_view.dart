@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_2048/src/views/widgets/base_view.dart';
 import 'package:project_2048/src/views/widgets/base_button.dart';
-import 'package:project_2048/src/views/widgets/one_string_card.dart';
-import 'package:project_2048/src/views/widgets/two_string_card.dart';
+import 'package:project_2048/src/views/widgets/two_string_container.dart';
 
 class BoardView extends StatelessWidget {
   const BoardView({Key key}) : super(key: key);
@@ -12,9 +11,15 @@ class BoardView extends StatelessWidget {
     return BaseView(
       viewTitle: '2048',
       children: [
-        TwoStringCard(
+        TwoStringContainer(
           dataType: 'Score',
-          dataValue: '${2048}',
+          dataValue: '${10676}',
+        ),
+        BaseButton(
+          buttonText: 'Redo',
+        ),
+        BaseButton(
+          buttonText: 'Restart',
         ),
         BaseButton(
           buttonText: 'Go back',
