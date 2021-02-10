@@ -12,7 +12,10 @@ Map<int, Color> tileBackgroundColor = {
   256: Colors.blue[700],
   512: Colors.blue[800],
   1024: Colors.blue[900],
-  2048: Colors.indigo[800],
+  2048: Colors.indigo[900],
+  4096: Colors.indigo[900],
+  8192: Colors.indigo[900],
+  16384: Colors.indigo[900],
 };
 
 Map<int, Color> tileTextColor = {
@@ -28,6 +31,9 @@ Map<int, Color> tileTextColor = {
   512: Colors.grey[50],
   1024: Colors.grey[50],
   2048: Colors.grey[50],
+  4096: Colors.grey[50],
+  8192: Colors.grey[50],
+  16384: Colors.grey[50],
 };
 
 Map<int, double> tileTextFontSize = {
@@ -43,4 +49,14 @@ Map<int, double> tileTextFontSize = {
   512: 24,
   1024: 21,
   2048: 21,
+  4096: 21,
+  8192: 21,
+  16384: 21,
 };
+
+BorderRadiusGeometry borderRadius = BorderRadius.all(Radius.circular(21));
+double borderPadding = 21;
+double moveInterval = 0.6;
+double elevation = 3;
+Color gameBoardBackgroundColor = Colors.cyan[700].withOpacity(0.9);
+Color shadowColor = Colors.grey[850];
