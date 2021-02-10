@@ -3,9 +3,14 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:project_2048/src/views/game/playing_area/game_board/tile_view.dart';
 
-class GameBoardView extends StatelessWidget {
+class GameBoardView extends StatefulWidget {
   const GameBoardView({Key key}) : super(key: key);
 
+  @override
+  _GameBoardViewState createState() => _GameBoardViewState();
+}
+
+class _GameBoardViewState extends State<GameBoardView> {
   @override
   Widget build(BuildContext context) {
     return Card(
