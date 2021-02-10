@@ -12,6 +12,7 @@ dependencies:
   google_fonts: ^1.1.2
   page_transition: ^1.1.7+6
   provider: ^4.0.4
+  simple_gesture_detector: ^0.1.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
