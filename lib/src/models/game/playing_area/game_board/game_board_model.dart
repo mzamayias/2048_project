@@ -1,5 +1,5 @@
 import 'dart:math' show Random;
-import 'tile.dart';
+import 'tile_model.dart';
 
 class GameBoard {
   final int row;
