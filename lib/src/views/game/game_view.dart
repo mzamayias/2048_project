@@ -15,6 +15,8 @@ class GameView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PlayingAreaView playingAreaView = PlayingAreaView();
+    ExitView exitView = ExitView();
     return BaseView(
       viewTitle: 'Game',
       children: <Widget>[
@@ -27,7 +29,7 @@ class GameView extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: PlayingAreaView(),
+              child: playingAreaView,
             ),
           ),
         ),
@@ -40,7 +42,7 @@ class GameView extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: PlayingAreaView(),
+              child: playingAreaView,
             ),
           ),
         ),
@@ -53,7 +55,7 @@ class GameView extends StatelessWidget {
               curve: Curves.easeInToLinear,
               duration: Duration(milliseconds: 210),
               reverseDuration: Duration(milliseconds: 210),
-              child: ExitView(),
+              child: exitView,
             ),
           ),
         ),
