@@ -1,5 +1,7 @@
+// import flutter packages
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+// import pub packages
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
 class SwipeController extends StatelessWidget {
