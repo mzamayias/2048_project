@@ -8,9 +8,17 @@ import 'package:project_2048/src/views/widgets/back_button.dart';
 import 'package:project_2048/src/views/widgets/base_view.dart';
 import 'package:provider/provider.dart';
 
-class PlayingAreaView extends StatelessWidget {
+class PlayingAreaView extends StatefulWidget {
+  @override
+  _PlayingAreaViewState createState() => _PlayingAreaViewState();
+}
+
+class _PlayingAreaViewState extends State<PlayingAreaView>
+    with AutomaticKeepAliveClientMixin {
+  bool wantKeepAlive = true;
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ScoreModel>.value(value: ScoreModel()),
