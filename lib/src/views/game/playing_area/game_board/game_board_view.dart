@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_2048/src/models/game/playing_area/game_board/score_model.dart';
 import 'package:project_2048/src/utlis.dart';
 import 'package:project_2048/src/views/game/playing_area/swipe_controller.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../models/game/playing_area/game_board/tile.dart';
 
@@ -15,6 +14,7 @@ class GameBoardView extends StatefulWidget {
 
 class GameBoardViewState extends State<GameBoardView>
     with SingleTickerProviderStateMixin {
+
   ScoreModel scoreModel = ScoreModel();
 
   AnimationController _controller;
@@ -182,7 +182,7 @@ class GameBoardViewState extends State<GameBoardView>
             }
             tiles[column].value = 0;
             tiles[row].value = resultValue;
-            scoreModel.score +=resultValue;
+            scoreModel.score += resultValue;
           }
           break;
         }
