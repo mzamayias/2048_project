@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_2048/src/models/game/playing_area/game_board/score_model.dart';
 import 'package:project_2048/src/utlis.dart';
 import 'package:project_2048/src/views/game/playing_area/swipe_controller.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../models/game/playing_area/game_board/tile.dart';
 
@@ -13,14 +15,20 @@ class GameBoardView extends StatefulWidget {
 
 class GameBoardViewState extends State<GameBoardView>
     with SingleTickerProviderStateMixin {
+  ScoreModel scoreModel = ScoreModel();
+
   AnimationController _controller;
+  static GameBoardViewState of(BuildContext context, {bool root = false}) =>
+      root
+          ? context.findRootAncestorStateOfType<GameBoardViewState>()
+          : context.findAncestorStateOfType<GameBoardViewState>();
 
   // 2D array of tiles.
   List<List<Tile>> _gameBoard = List.generate(
     4,
     (row) => List.generate(
       4,
-      (column) => Tile(column, row, 0),
+      (column) => Tile(row, column, 0),
     ),
   );
 
@@ -42,15 +50,17 @@ class GameBoardViewState extends State<GameBoardView>
   @override
   void initState() {
     super.initState();
+
     _controller = AnimationController(
-      duration: Duration(milliseconds: 210),
+      duration: Duration(milliseconds: 180),
       vsync: this,
     );
+
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         setState(() {
           _toAdd.forEach(
-            (tile) => _gameBoard[tile.column][tile.row].value = tile.value,
+            (tile) => _gameBoard[tile.row][tile.column].value = tile.value,
           );
           _flattenedGameBoard.forEach(
             (tile) => tile.resetAnimations(),
@@ -118,28 +128,31 @@ class GameBoardViewState extends State<GameBoardView>
   }
 
   bool mergeLeft() {
-    return _gameBoard.map((e) => mergeTiles(e)).toList().any((e) => e);
+    return _gameBoard
+        .map((tile) => mergeTiles(tile))
+        .toList()
+        .any((tile) => tile);
   }
 
   bool mergeRight() {
     return _gameBoard
-        .map((e) => mergeTiles(e.reversed.toList()))
+        .map((tile) => mergeTiles(tile.reversed.toList()))
         .toList()
-        .any((e) => e);
+        .any((tile) => tile);
   }
 
   bool mergeUp() {
     return _transposedGameBoard
-        .map((e) => mergeTiles(e))
+        .map((tile) => mergeTiles(tile))
         .toList()
-        .any((e) => e);
+        .any((tile) => tile);
   }
 
   bool mergeDown() {
     return _transposedGameBoard
-        .map((e) => mergeTiles(e.reversed.toList()))
+        .map((tile) => mergeTiles(tile.reversed.toList()))
         .toList()
-        .any((e) => e);
+        .any((tile) => tile);
   }
 
   bool mergeTiles(List<Tile> tiles) {
@@ -147,9 +160,10 @@ class GameBoardViewState extends State<GameBoardView>
     for (int row = 0; row < tiles.length; row++) {
       for (int column = row; column < tiles.length; column++) {
         if (tiles[column].value != 0) {
-          Tile mergeTile = tiles
-              .skip(column + 1)
-              .firstWhere((tile) => tile.value != 0, orElse: () => null);
+          Tile mergeTile = tiles.skip(column + 1).firstWhere(
+                (tile) => tile.value != 0,
+                orElse: () => null,
+              );
           if (mergeTile != null && mergeTile.value != tiles[column].value) {
             mergeTile = null;
           }
@@ -168,12 +182,12 @@ class GameBoardViewState extends State<GameBoardView>
             }
             tiles[column].value = 0;
             tiles[row].value = resultValue;
+            scoreModel.score +=resultValue;
           }
           break;
         }
       }
     }
-    _controller.forward(from: 0);
     return didChange;
   }
 
@@ -190,7 +204,6 @@ class GameBoardViewState extends State<GameBoardView>
         )..appear(_controller),
       );
     }
-    _controller.forward(from: 0);
   }
 
   void setupNewGame() {
@@ -202,6 +215,7 @@ class GameBoardViewState extends State<GameBoardView>
       _toAdd.clear();
       addNewTiles([2, 2]);
       _controller.forward(from: 0);
+      scoreModel.score = 0;
     });
   }
 }
