@@ -15,8 +15,15 @@ class PlayingAreaView extends StatelessWidget {
     return BaseView(
       viewTitle: '2048',
       children: [
-        RestartButton(),
-        RedoButton(),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            RestartButton(),
+            RedoButton(),
+          ],
+        ),
+        Spacer(),
         GameBoardView(),
         ScoreBoard(),
         BackButton(),
