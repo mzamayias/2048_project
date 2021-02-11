@@ -3,7 +3,7 @@ import 'package:project_2048/src/models/game/playing_area/game_board/score_model
 import 'package:project_2048/src/utlis.dart';
 import 'package:project_2048/src/views/game/playing_area/swipe_controller.dart';
 
-import '../../../../models/game/playing_area/game_board/tile.dart';
+import '../../../../models/game/playing_area/game_board/tile_model.dart';
 
 import 'tile_view.dart';
 
@@ -14,7 +14,6 @@ class GameBoardView extends StatefulWidget {
 
 class GameBoardViewState extends State<GameBoardView>
     with SingleTickerProviderStateMixin {
-
   ScoreModel scoreModel = ScoreModel();
 
   AnimationController _controller;
@@ -24,22 +23,22 @@ class GameBoardViewState extends State<GameBoardView>
           : context.findAncestorStateOfType<GameBoardViewState>();
 
   // 2D array of tiles.
-  List<List<Tile>> _gameBoard = List.generate(
+  List<List<TileModel>> _gameBoard = List.generate(
     4,
     (row) => List.generate(
       4,
-      (column) => Tile(row, column, 0),
+      (column) => TileModel(row, column, 0),
     ),
   );
 
-  List<Tile> _toAdd = [];
+  List<TileModel> _toAdd = [];
 
-  Iterable<Tile> get _allTiles =>
+  Iterable<TileModel> get _allTiles =>
       [_flattenedGameBoard, _toAdd].expand((e) => e);
 
-  Iterable<Tile> get _flattenedGameBoard => _gameBoard.expand((e) => e);
+  Iterable<TileModel> get _flattenedGameBoard => _gameBoard.expand((e) => e);
 
-  List<List<Tile>> get _transposedGameBoard => List.generate(
+  List<List<TileModel>> get _transposedGameBoard => List.generate(
         4,
         (row) => List.generate(
           4,
@@ -52,7 +51,7 @@ class GameBoardViewState extends State<GameBoardView>
     super.initState();
 
     _controller = AnimationController(
-      duration: Duration(milliseconds: 180),
+      duration: Duration(milliseconds: 300),
       vsync: this,
     );
 
@@ -77,14 +76,11 @@ class GameBoardViewState extends State<GameBoardView>
     List<Widget> _stackItems = [];
     _stackItems.addAll(
       _allTiles.map(
-        (tile) => AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) => tile.animatedValue.value == 0
-              ? TileView()
-              : TileView(
-                  value: tile.animatedValue.value,
-                ),
-        ),
+        (tile) => tile.animatedValue.value == 0
+            ? TileView()
+            : TileView(
+                value: tile.animatedValue.value,
+              ),
       ),
     );
     return AspectRatio(
@@ -155,12 +151,12 @@ class GameBoardViewState extends State<GameBoardView>
         .any((tile) => tile);
   }
 
-  bool mergeTiles(List<Tile> tiles) {
+  bool mergeTiles(List<TileModel> tiles) {
     bool didChange = false;
     for (int row = 0; row < tiles.length; row++) {
       for (int column = row; column < tiles.length; column++) {
         if (tiles[column].value != 0) {
-          Tile mergeTile = tiles.skip(column + 1).firstWhere(
+          TileModel mergeTile = tiles.skip(column + 1).firstWhere(
                 (tile) => tile.value != 0,
                 orElse: () => null,
               );
@@ -192,12 +188,12 @@ class GameBoardViewState extends State<GameBoardView>
   }
 
   void addNewTiles(List<int> values) {
-    List<Tile> empty =
+    List<TileModel> empty =
         _flattenedGameBoard.where((tile) => tile.value == 0).toList();
     empty.shuffle();
     for (int index = 0; index < values.length; index++) {
       _toAdd.add(
-        Tile(
+        TileModel(
           empty[index].row,
           empty[index].column,
           values[index],
