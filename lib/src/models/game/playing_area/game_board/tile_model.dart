@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../../../utlis.dart';
 
-class Tile {
+class TileModel {
   final int row;
   final int column;
 
@@ -16,7 +16,7 @@ class Tile {
 
   Animation<int> animatedValue;
 
-  Tile(this.row, this.column, this.value) {
+  TileModel(this.row, this.column, this.value) {
     resetAnimations();
   }
 
@@ -33,6 +33,7 @@ class Tile {
       curve: Interval(
         0.0,
         moveInterval,
+        curve: Curves.easeInToLinear,
       ),
     );
     animatedX = Tween(
@@ -47,14 +48,14 @@ class Tile {
 
   void bounce(Animation<double> parent) {
     size = TweenSequence([
-      TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.2), weight: 1.0),
-      TweenSequenceItem(tween: Tween(begin: 1.2, end: 1.0), weight: 1.0),
+      TweenSequenceItem(tween: Tween(begin: 0.9, end: 1.2), weight: 1.0),
+      TweenSequenceItem(tween: Tween(begin: 1.2, end: 0.9), weight: 1.0),
     ]).animate(
       CurvedAnimation(
         parent: parent,
         curve: Interval(
           moveInterval,
-          1.0,
+          0.9,
         ),
       ),
     );
@@ -62,14 +63,14 @@ class Tile {
 
   void changeNumber(Animation<double> parent, int newValue) {
     animatedValue = TweenSequence([
-      TweenSequenceItem(tween: ConstantTween(value), weight: .01),
-      TweenSequenceItem(tween: ConstantTween(newValue), weight: .99),
+      TweenSequenceItem(tween: ConstantTween(value), weight: 0.1),
+      TweenSequenceItem(tween: ConstantTween(newValue), weight: 0.9),
     ]).animate(
       CurvedAnimation(
         parent: parent,
         curve: Interval(
           moveInterval,
-          1.0,
+          0.9,
         ),
       ),
     );
@@ -82,6 +83,7 @@ class Tile {
         curve: Interval(
           moveInterval,
           1.0,
+          curve: Curves.easeInOutExpo,
         ),
       ),
     );
