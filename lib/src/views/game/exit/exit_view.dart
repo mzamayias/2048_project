@@ -1,4 +1,5 @@
 // import dart packages
+import 'dart:io';
 
 // import flutter packages
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class ExitView extends StatelessWidget {
         ),
         BaseButton(
           buttonText: 'Yes',
-          // onPressed: () => exit(0)
+          onPressed: () => exit(0)
         ),
         Spacer(
           flex: 1,
