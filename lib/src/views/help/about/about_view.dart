@@ -39,7 +39,7 @@ class AboutView extends StatelessWidget {
           dataType: 'Version',
           dataValue: '${_app.version}',
         ),
-        // Spacer(),
+        Spacer(),
         BackButton(),
       ],
     );

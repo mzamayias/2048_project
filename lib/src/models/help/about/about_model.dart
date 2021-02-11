@@ -9,7 +9,7 @@ class AboutModel {
 
   App _app = App(
     name: '2048 Semester Project',
-    version: 'Under developement',
+    version: 'Still Under Developement',
   );
 
   Developer get developer => this._developer;
