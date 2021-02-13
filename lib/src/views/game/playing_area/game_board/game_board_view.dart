@@ -125,6 +125,7 @@ class GameBoardViewState extends State<GameBoardView>
   @override
   Widget build(BuildContext context) {
     List<Widget> stackItems = [];
+
     /// Game board with no animimations
     stackItems.addAll(
       allTiles.map(
@@ -135,6 +136,7 @@ class GameBoardViewState extends State<GameBoardView>
               ),
       ),
     );
+
     /// Game board with animimations
     // stackItems.addAll(
     //   allTiles.map(
@@ -219,28 +221,49 @@ class GameBoardViewState extends State<GameBoardView>
 
   bool mergeTiles(List<TileModel> tiles) {
     bool didChange = false;
-    // iterate through game board rows
+
+    /// Iterate through game board rows
     for (int row = 0; row < tiles.length; row++) {
-      // iterate through game board column
+      /// Iterate through game board column
       for (int column = row; column < tiles.length; column++) {
         if (tiles[column].value != 0) {
-          // Find a tile that's not empty
+          /// Search for the first tile [.firstWhere(] that's not at this index
+          /// [tiles.skip(column + 1)] and not empty
+          /// [(tile) => tile.value != 0,]. If there's no such tile, return null
+          /// [orElse: () => null,].
           TileModel mergeTile = tiles.skip(column + 1).firstWhere(
                 (tile) => tile.value != 0,
                 orElse: () => null,
               );
+
+          /// Check if the found tile [mergeTile] is different than this tile
+          /// [tiles[column]] (they should have different values). If it's the
+          /// same do nothing, else nullify found tile [mergeTile = null].
           if (mergeTile != null && mergeTile.value != tiles[column].value) {
             mergeTile = null;
           }
+          // Check if row and column are different
           if (row != column || mergeTile != null) {
-            didChange = true;
-            int resultValue = tiles[column].value;
-            tiles[column].moveTo(controller, tiles[row].row, tiles[row].column);
+            didChange = true; // There will be a game board change
+            int resultValue =
+                tiles[column].value; // Result value is the value of this tile
+            tiles[column].moveTo(
+              controller,
+              tiles[row].row,
+              tiles[row].column,
+            ); // Move tile
             if (mergeTile != null) {
               resultValue += mergeTile.value;
-              mergeTile.moveTo(controller, tiles[row].row, tiles[row].column);
+              mergeTile.moveTo(
+                controller,
+                tiles[row].row,
+                tiles[row].column,
+              );
               mergeTile.bounce(controller);
-              mergeTile.changeNumber(controller, resultValue);
+              mergeTile.changeNumber(
+                controller,
+                resultValue,
+              );
               mergeTile.value = 0;
               tiles[column].changeNumber(controller, 0);
               scoreModel.score += resultValue;
