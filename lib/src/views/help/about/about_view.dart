@@ -17,19 +17,19 @@ import 'package:project_2048/src/views/widgets/back_button.dart';
 class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Developer _developer = AboutController().developer;
-    App _app = AboutController().app;
+    final Developer _developer = AboutController().developer;
+    final App _app = AboutController().app;
     return BaseView(
       viewTitle: 'About',
       children: <Widget>[
-        OneStringCard(
+        const OneStringCard(
           cardText: 'Developer details',
         ),
         TwoStringCard(
           dataType: 'Name',
           dataValue: '${_developer.firstName} ${_developer.lastName}',
         ),
-        OneStringCard(
+        const OneStringCard(
           cardText: 'App details',
         ),
         TwoStringCard(
@@ -40,8 +40,8 @@ class AboutView extends StatelessWidget {
           dataType: 'Version',
           dataValue: '${_app.version}',
         ),
-        Spacer(),
-        BackButton(),
+        const Spacer(),
+        const BackButton(),
       ],
     );
   }
