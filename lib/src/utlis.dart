@@ -54,8 +54,8 @@ Map<int, double> tileTextFontSize = {
   16384: 21,
 };
 
-BorderRadiusGeometry borderRadius = BorderRadius.all(Radius.circular(21));
-EdgeInsets padding = EdgeInsets.all(21);
+BorderRadiusGeometry borderRadius = const BorderRadius.all(const Radius.circular(21));
+EdgeInsets padding = const EdgeInsets.all(21);
 double moveInterval = 0.3;
 double elevation = 3;
 Color gameBoardBackgroundColor = Colors.cyan[700].withOpacity(0.9);
