@@ -67,12 +67,12 @@ class GameBoardViewState extends State<GameBoardView>
     controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         setState(() {
-          toAdd.forEach(
-            (tile) => gameBoard[tile.row][tile.column].value = tile.value,
-          );
-          flattenedGameBoard.forEach(
-            (tile) => tile.resetAnimations(),
-          );
+          for (TileModel tile in toAdd) {
+            gameBoard[tile.row][tile.column].value = tile.value;
+          }
+          for (TileModel tile in flattenedGameBoard) {
+            tile.resetAnimations();
+          }
           toAdd.clear();
         });
       }
@@ -113,10 +113,10 @@ class GameBoardViewState extends State<GameBoardView>
 
   void setupNewGame() {
     setState(() {
-      flattenedGameBoard.forEach((tile) {
+      for (TileModel tile in flattenedGameBoard) {
         tile.value = 0;
         tile.resetAnimations();
-      });
+      }
       toAdd.clear();
       addNewTiles([randomTileValue(), randomTileValue()]);
       controller.forward(from: 0);
