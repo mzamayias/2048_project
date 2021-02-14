@@ -10,27 +10,27 @@ class BaseButton extends StatelessWidget {
 
   final int flex;
   final String buttonText;
-  final Function onPressed;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
       shadowColor: Colors.grey[850],
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(21)),
       ),
       elevation: 3,
       child: FlatButton(
-        onPressed: onPressed ?? () => print('"$buttonText" pressed!'),
-        shape: RoundedRectangleBorder(
+        onPressed: onPressed ?? () => debugPrint('"$buttonText" pressed!'),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(21)),
         ),
         color: Colors.blueAccent[700],
         focusColor: Colors.grey[850].withOpacity(0.3),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(21),
+            padding: const EdgeInsets.all(21),
             child: Text(
               buttonText,
               textAlign: TextAlign.center,
