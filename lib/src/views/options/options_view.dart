@@ -10,7 +10,7 @@ class OptionsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
+    return const BaseView(
       viewTitle: 'Options',
       children: <Widget>[
         BaseButton(

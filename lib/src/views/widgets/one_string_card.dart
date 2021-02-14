@@ -12,13 +12,13 @@ class OneStringCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shadowColor: Colors.grey[850],
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(21)),
       ),
       elevation: 3,
       color: Colors.grey[850],
       child: Padding(
-        padding: EdgeInsets.all(21),
+        padding: const EdgeInsets.all(21),
         child: Text(
           cardText,
           textAlign: TextAlign.center,

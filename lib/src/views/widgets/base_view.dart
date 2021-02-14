@@ -41,7 +41,7 @@ class BaseView extends StatelessWidget {
           alignment: Alignment.topCenter,
           color: Colors.grey[50],
           child: Padding(
-            padding: EdgeInsets.all(21),
+            padding: const EdgeInsets.all(21),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               mainAxisSize: MainAxisSize.max,
