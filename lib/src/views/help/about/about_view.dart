@@ -34,11 +34,11 @@ class AboutView extends StatelessWidget {
         ),
         TwoStringCard(
           dataType: 'Name',
-          dataValue: '${_app.name}',
+          dataValue: _app.name,
         ),
         TwoStringCard(
           dataType: 'Version',
-          dataValue: '${_app.version}',
+          dataValue: _app.version,
         ),
         const Spacer(),
         const BackButton(),
