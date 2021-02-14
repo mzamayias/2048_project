@@ -18,27 +18,25 @@ class TwoStringCard extends StatelessWidget {
       flex: flex ?? 1,
       child: Card(
         shadowColor: Colors.grey[850],
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(21)),
         ),
         elevation: 3,
         color: Colors.lightBlue[900],
         child: Center(
           child: Padding(
-            padding: EdgeInsets.only(left: 21, right: 21),
+            padding: const EdgeInsets.only(left: 21, right: 21),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Expanded(
-                  flex: 1,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       dataType,
                       textAlign: TextAlign.left,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.w900,
