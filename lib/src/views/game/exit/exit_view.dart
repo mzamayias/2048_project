@@ -27,7 +27,7 @@ class ExitView extends StatelessWidget {
         ),
         BaseButton(
           buttonText: 'Yes',
-          onPressed: () => exit(0)
+          onPressed: () => exit(0),
         ),
         Spacer(
           flex: 1,

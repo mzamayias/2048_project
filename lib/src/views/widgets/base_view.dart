@@ -19,7 +19,7 @@ class BaseView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leadingWidth: 0,
-        elevation: 3,
+        elevation: 0,
         shadowColor: Colors.grey[850],
         centerTitle: true,
         backgroundColor: Colors.grey[50],
