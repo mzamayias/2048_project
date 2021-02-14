@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 // import custom packages
 import 'package:project_2048/src/views/current_view.dart';
 
-void main() => runApp(Project2048());
+void main() => runApp(const Project2048());
 
 class Project2048 extends StatefulWidget {
   const Project2048({Key key}) : super(key: key);
@@ -28,7 +28,7 @@ class _Project2048State extends State<Project2048> {
         ),
       ),
       home: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle(
+        value: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: Brightness.dark,
@@ -36,7 +36,7 @@ class _Project2048State extends State<Project2048> {
         ),
         child: ColorfulSafeArea(
           color: Colors.grey[50],
-          child: CurrentView(),
+          child: const CurrentView(),
         ),
       ),
     );
