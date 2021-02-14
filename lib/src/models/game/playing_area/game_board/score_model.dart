@@ -10,10 +10,10 @@ class ScoreModel extends ChangeNotifier {
 
   int _score;
 
-  int get score => this._score;
+  int get score => _score;
 
   set score(int value) {
-    this._score = value;
+    _score = value;
     notifyListeners();
   }
 }
