@@ -37,7 +37,7 @@ class SwipeController extends StatelessWidget {
           down();
         }
       },
-      swipeConfig: SimpleSwipeConfig(
+      swipeConfig: const SimpleSwipeConfig(
         verticalThreshold: 60,
         horizontalThreshold: 60,
         swipeDetectionBehavior: SwipeDetectionBehavior.singularOnEnd,
