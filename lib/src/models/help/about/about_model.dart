@@ -1,5 +1,5 @@
-import 'developer.dart';
 import 'app.dart';
+import 'developer.dart';
 
 class AboutModel {
   Developer _developer = Developer(
@@ -12,15 +12,15 @@ class AboutModel {
     version: 'Still Under Developement',
   );
 
-  Developer get developer => this._developer;
+  Developer get developer => _developer;
 
   set developer(Developer value) {
-    this._developer = value;
+    _developer = value;
   }
 
-  App get app => this._app;
+  App get app => _app;
 
   set app(App value) {
-    this._app = value;
+    _app = value;
   }
 }
