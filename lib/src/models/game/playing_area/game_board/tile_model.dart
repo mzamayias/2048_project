@@ -23,12 +23,12 @@ class TileModel {
   void resetAnimations() {
     animatedX = AlwaysStoppedAnimation(row.toDouble());
     animatedY = AlwaysStoppedAnimation(column.toDouble());
-    size = AlwaysStoppedAnimation(1.0);
+    size = const AlwaysStoppedAnimation(1.0);
     animatedValue = AlwaysStoppedAnimation(value);
   }
 
   void moveTo(Animation<double> parent, int x, int y) {
-    Animation<double> curved = CurvedAnimation(
+    final Animation<double> curved = CurvedAnimation(
       parent: parent,
       curve: Interval(
         0.0,
@@ -37,11 +37,11 @@ class TileModel {
       ),
     );
     animatedX = Tween(
-      begin: this.row.toDouble(),
+      begin: row.toDouble(),
       end: x.toDouble(),
     ).animate(curved);
     animatedY = Tween(
-      begin: this.column.toDouble(),
+      begin: column.toDouble(),
       end: y.toDouble(),
     ).animate(curved);
   }
