@@ -54,7 +54,7 @@ Map<int, double> tileTextFontSize = {
   16384: 21,
 };
 
-BorderRadiusGeometry borderRadius = const BorderRadius.all(const Radius.circular(21));
+BorderRadiusGeometry borderRadius = const BorderRadius.all(Radius.circular(21));
 EdgeInsets padding = const EdgeInsets.all(21);
 double moveInterval = 0.3;
 double elevation = 3;
