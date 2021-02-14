@@ -41,9 +41,9 @@ class _CurrentViewState extends State<CurrentView> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: PageView(
-        children: _pages,
         onPageChanged: onPageChanged,
         controller: _pageController,
+        children: _pages,
       ),
       bottomNavigationBar: PhysicalModel(
         color: Colors.transparent,
