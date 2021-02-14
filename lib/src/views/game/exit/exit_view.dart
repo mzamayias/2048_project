@@ -19,19 +19,17 @@ class ExitView extends StatelessWidget {
     return BaseView(
       viewTitle: 'Exit',
       children: <Widget>[
-        OneStringCard(
+        const OneStringCard(
           cardText: 'Are you sure you would like to exit the app?',
         ),
-        Spacer(
+        const Spacer(
           flex: 32,
         ),
         BaseButton(
           buttonText: 'Yes',
           onPressed: () => exit(0),
         ),
-        Spacer(
-          flex: 1,
-        ),
+        const Spacer(),
         BaseButton(
           buttonText: 'No',
           onPressed: () => Navigator.pop(context),
