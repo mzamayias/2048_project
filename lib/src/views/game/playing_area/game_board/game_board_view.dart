@@ -1,13 +1,15 @@
 // import Random from math
 import 'dart:math' show Random;
+
 // import flutter packages
 import 'package:flutter/material.dart';
+
 // import custom packages
+import '../../../../models/game/playing_area/game_board/score_model.dart';
+import '../../../../models/game/playing_area/game_board/tile_model.dart';
 import '../../../../utlis.dart';
 import 'swipe_controller.dart';
 import 'tile_view.dart';
-import '../../../../models/game/playing_area/game_board/score_model.dart';
-import '../../../../models/game/playing_area/game_board/tile_model.dart';
 
 class GameBoardView extends StatefulWidget {
   @override
@@ -57,7 +59,7 @@ class GameBoardViewState extends State<GameBoardView>
 
     // Animation controlller configuration
     controller = AnimationController(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       vsync: this,
     );
 
@@ -130,7 +132,7 @@ class GameBoardViewState extends State<GameBoardView>
     stackItems.addAll(
       allTiles.map(
         (tile) => tile.animatedValue.value == 0
-            ? TileView()
+            ? const TileView()
             : TileView(
                 value: tile.animatedValue.value,
               ),
@@ -162,7 +164,7 @@ class GameBoardViewState extends State<GameBoardView>
         shadowColor: shadowColor,
         elevation: elevation,
         child: Padding(
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           child: SwipeController(
             up: () => merge(mergeUp),
             down: () => merge(mergeDown),
@@ -172,7 +174,7 @@ class GameBoardViewState extends State<GameBoardView>
               mainAxisSpacing: 1.5,
               crossAxisSpacing: 1.5,
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 4,
               children: stackItems,
             ),
