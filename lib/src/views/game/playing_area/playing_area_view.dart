@@ -15,6 +15,7 @@ class PlayingAreaView extends StatefulWidget {
 
 class _PlayingAreaViewState extends State<PlayingAreaView>
     with AutomaticKeepAliveClientMixin {
+  @override
   bool wantKeepAlive = true;
   @override
   Widget build(BuildContext context) {
@@ -29,8 +30,8 @@ class _PlayingAreaViewState extends State<PlayingAreaView>
           RestartButton(),
           RedoButton(),
           GameBoardView(),
-          ScoreView(),
-          BackButton(),
+          const ScoreView(),
+          const BackButton(),
         ],
       ),
     );
