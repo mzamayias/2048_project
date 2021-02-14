@@ -85,7 +85,7 @@ class GameBoardViewState extends State<GameBoardView>
   /// Add new random tiles to game board randomly.
   void addNewTiles(List<int> values) {
     // A list of empty tiles
-    List<TileModel> empty =
+    final List<TileModel> empty =
         flattenedGameBoard.where((tile) => tile.value == 0).toList();
     empty.shuffle();
     for (int index = 0; index < values.length; index++) {
@@ -104,7 +104,7 @@ class GameBoardViewState extends State<GameBoardView>
   /// 90% chances to get a 2.
   int randomTileValue() {
     // Create a random number generator
-    Random rng = Random();
+    final Random rng = Random();
     // Select a random int in range 0 inclusive, 10 exlusive.
     // If that number is 0 (10% chance) then return 4,
     // else (90% chance) return 2.
@@ -126,7 +126,7 @@ class GameBoardViewState extends State<GameBoardView>
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> stackItems = [];
+    final List<Widget> stackItems = [];
 
     /// Game board with no animimations
     stackItems.addAll(
