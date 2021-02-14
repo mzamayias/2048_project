@@ -44,7 +44,6 @@ class BaseView extends StatelessWidget {
             padding: const EdgeInsets.all(21),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
-              mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: children,
             ),
