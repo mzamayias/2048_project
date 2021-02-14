@@ -14,10 +14,10 @@ class CurrentView extends StatefulWidget {
 }
 
 class _CurrentViewState extends State<CurrentView> {
-  static List<Widget> _pages = [
-    GameView(),
-    OptionsView(),
-    HelpView(),
+  static final List<Widget> _pages = [
+    const GameView(),
+    const OptionsView(),
+    const HelpView(),
   ];
 
   // https://stackoverflow.com/a/63258130/13504709
