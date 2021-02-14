@@ -75,17 +75,17 @@ class _CurrentViewState extends State<CurrentView> {
               size: 33,
             ),
             items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon: Icon(Icons.gamepad_outlined),
                 activeIcon: Icon(Icons.gamepad_rounded),
                 label: 'Game',
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon: Icon(Icons.settings_outlined),
                 activeIcon: Icon(Icons.settings_rounded),
                 label: 'Options',
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon: Icon(Icons.help_outline_outlined),
                 activeIcon: Icon(Icons.help_rounded),
                 label: 'Help',
