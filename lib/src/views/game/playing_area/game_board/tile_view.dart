@@ -12,7 +12,7 @@ class TileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(21)),
       ),
       elevation: 3,
@@ -20,7 +20,7 @@ class TileView extends StatelessWidget {
           value != null ? tileBackgroundColor[value] : tileBackgroundColor[0],
       shadowColor: Colors.grey[850],
       child: Padding(
-        padding: EdgeInsets.all(9),
+        padding: const EdgeInsets.all(9),
         child: Center(
           child: Text(
             value != null
