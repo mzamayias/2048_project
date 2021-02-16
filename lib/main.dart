@@ -7,7 +7,9 @@ import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // import custom packages
-import 'package:project_2048/src/views/current_view.dart';
+// import 'src/views/current_view.dart';
+import 'src/views/splashscreen_view.dart';
+
 
 void main() => runApp(const Project2048());
 
@@ -36,7 +38,7 @@ class _Project2048State extends State<Project2048> {
         ),
         child: ColorfulSafeArea(
           color: Colors.grey[50],
-          child: const CurrentView(),
+          child: SplashscreenView(),
         ),
       ),
     );
