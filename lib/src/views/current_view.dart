@@ -38,6 +38,14 @@ class _CurrentViewState extends State<CurrentView> {
 
   @override
   Widget build(BuildContext context) {
+    final IconThemeData _iconThemeData = IconThemeData(
+      color: Colors.blueAccent[700],
+      size: 33,
+    );
+    const TextStyle _labelTextStyle = TextStyle(
+      fontSize: 21,
+      fontWeight: FontWeight.bold,
+    );
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: PageView(
@@ -64,16 +72,14 @@ class _CurrentViewState extends State<CurrentView> {
             currentIndex: _pageIndex,
             onTap: onIconTapped,
             backgroundColor: Colors.grey[50],
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            selectedIconTheme: IconThemeData(
-              color: Colors.blueAccent[700],
-              size: 33,
-            ),
-            unselectedIconTheme: IconThemeData(
-              color: Colors.blueAccent[700],
-              size: 33,
-            ),
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            selectedLabelStyle: _labelTextStyle,
+            selectedItemColor: Colors.blueAccent[700],
+            unselectedItemColor: Colors.blueAccent[700],
+            unselectedLabelStyle: _labelTextStyle,
+            selectedIconTheme: _iconThemeData,
+            unselectedIconTheme: _iconThemeData,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.gamepad_outlined),
@@ -105,9 +111,9 @@ class _CurrentViewState extends State<CurrentView> {
 
   void onIconTapped(int pageIndex) {
     _pageController.animateToPage(
-          pageIndex,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInToLinear,
-        );
+      pageIndex,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInToLinear,
+    );
   }
 }
