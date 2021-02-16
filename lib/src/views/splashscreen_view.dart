@@ -15,7 +15,7 @@ class _SplashscreenViewState extends State<SplashscreenView> {
   @override
   void initState() {
     const Duration duration = Duration(
-      seconds: 30,
+      seconds: 3,
     );
     Future.delayed(
       duration,
