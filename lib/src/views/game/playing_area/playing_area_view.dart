@@ -13,13 +13,9 @@ class PlayingAreaView extends StatefulWidget {
   _PlayingAreaViewState createState() => _PlayingAreaViewState();
 }
 
-class _PlayingAreaViewState extends State<PlayingAreaView>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  bool wantKeepAlive = true;
+class _PlayingAreaViewState extends State<PlayingAreaView> {
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ScoreModel>.value(value: ScoreModel()),
