@@ -13,7 +13,9 @@ import 'src/views/splashscreen_view.dart';
 
 void main() => runApp(const Project2048());
 
+/// The app. Here begins the project.
 class Project2048 extends StatefulWidget {
+  /// Constructor for this widget.
   const Project2048({Key key}) : super(key: key);
   @override
   _Project2048State createState() => _Project2048State();
