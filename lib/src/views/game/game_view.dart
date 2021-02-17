@@ -1,11 +1,11 @@
 // import packages
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:project_2048/src/views/game/playing_area/playing_area_view.dart';
+import 'playing_area/playing_area_view.dart';
 // import view widgets
-import 'package:project_2048/src/views/widgets/base_view.dart';
-import 'package:project_2048/src/views/widgets/base_button.dart';
-import 'package:project_2048/src/views/game/exit/exit_view.dart';
+import '../widgets/base_view.dart';
+import '../widgets/base_button.dart';
+import 'exit/exit_view.dart';
 
 class GameView extends StatelessWidget {
   const GameView({

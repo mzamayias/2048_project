@@ -1,8 +1,8 @@
 // import models
-import 'package:project_2048/src/models/help/about/about_model.dart'
+import '../../../models/help/about/about_model.dart'
     show AboutModel;
-import 'package:project_2048/src/models/help/about/app.dart';
-import 'package:project_2048/src/models/help/about/developer.dart';
+import '../../../models/help/about/app.dart';
+import '../../../models/help/about/developer.dart';
 
 class AboutController {
   AboutController();

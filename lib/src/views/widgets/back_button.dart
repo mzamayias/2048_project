@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_2048/src/views/widgets/base_button.dart';
+import 'base_button.dart';
 
 
 class BackButton extends StatelessWidget {

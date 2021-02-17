@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'package:project_2048/src/views/help/about/about_view.dart';
-import 'package:project_2048/src/views/widgets/base_view.dart';
-import 'package:project_2048/src/views/widgets/base_button.dart';
+import 'about/about_view.dart';
+import '../widgets/base_view.dart';
+import '../widgets/base_button.dart';
 
 class HelpView extends StatelessWidget {
   const HelpView({

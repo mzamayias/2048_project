@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_2048/src/utlis.dart';
+import '../../../../utlis.dart';
 
 class TileView extends StatelessWidget {
   final int value;

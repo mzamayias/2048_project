@@ -1,7 +1,7 @@
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:flutter/material.dart';
-import 'package:project_2048/src/utlis.dart';
-import 'package:project_2048/src/views/current_view.dart';
+import '../utlis.dart';
+import 'current_view.dart';
 
 import 'widgets/splashscreen_card.dart';
 import 'widgets/splashscreen_text.dart';
